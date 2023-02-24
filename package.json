@@ -1,0 +1,35 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "flick-tracker",
+  "description": "This project will allow you to curate a watch list and favorite movie, and share with your friends",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicholasTozzi/flick-tracker.git"
+  },
+  "keywords": [
+    "movie",
+    "flick",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicholasTozzi/flick-tracker/issues"
+  },
+  "homepage": "https://github.com/NicholasTozzi/flick-tracker#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "date-fns": "^2.29.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "fns": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
