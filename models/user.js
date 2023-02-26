@@ -42,9 +42,9 @@ User.init(
     followingUsers: {
 //TODO finish params 
     },
-    genre {
+    genre: {
 //TODO finish params 
-type: array [
+    type: array [
     
 ]
     },
