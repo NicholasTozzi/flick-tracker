@@ -1,0 +1,46 @@
+//TODO: create more realistic data
+//TODO: Get data to populate from website to database
+[
+  {
+    "watched": ["Shrek", "Shrek2", "Shrek3"],
+    "watchlist": ["Taken", "Wanted", "Memento"],
+    "top5": [
+      "Example Movie 1",
+      "Example Movie 2",
+      "Example Movie 3",
+      "Example Movie 4",
+      "Example Movie 5"
+    ],
+    "followingActors": ["Jenna Ortega", "Jack Black", "Billy Ray Cyrus"],
+    "followingUsers": [],
+    "genre": []
+  },
+  {
+    "watched": ["Shrek", "Shrek2", "Shrek3"],
+    "watchlist": ["Taken", "Wanted", "Memento"],
+    "top5": [
+      "Example Movie 1",
+      "Example Movie 2",
+      "Example Movie 3",
+      "Example Movie 4",
+      "Example Movie 5"
+    ],
+    "followingActors": ["Jenna Ortega", "Jack Black", "Billy Ray Cyrus"],
+    "followingUsers": [],
+    "genre": []
+  },
+  {
+    "watched": ["Shrek", "Shrek2", "Shrek3"],
+    "watchlist": ["Taken", "Wanted", "Memento"],
+    "top5": [
+      "Example Movie 1",
+      "Example Movie 2",
+      "Example Movie 3",
+      "Example Movie 4",
+      "Example Movie 5"
+    ],
+    "followingActors": ["Jenna Ortega", "Jack Black", "Billy Ray Cyrus"],
+    "followingUsers": [],
+    "genre": []
+  }
+]
