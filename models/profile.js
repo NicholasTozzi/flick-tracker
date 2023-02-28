@@ -25,7 +25,7 @@ Profile.init(
     followingActors: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
-      defaultValue:[""]
+      defaultValue:[]
     },
     followingUsers: {
       type: DataTypes.ARRAY(DataTypes.STRING),
