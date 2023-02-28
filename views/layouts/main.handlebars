@@ -10,18 +10,20 @@
 </head>
 <body>
     <header>
-      <nav class="nav main-nav">
-            <ul>
-                <li><a href="/">HOMEPAGE</a></li>
-                <li><a href="/profile">PROFILE</a></li>
-                <li><a href="/community">COMMUNITY</a></li>
-                <li><a href="/login">LOGIN</a></li>
-                {{#if logged_in}}
-                <li><a href="/" class="nav-links">Log Out</a></li>
-                {{/if}}
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <div class="navWide">
+          <div class="wideDiv">
+            <a href="/">HOMEPAGE</a>
+            <a href="/profile">PROFILE</a>
+            <a href="/community">COMMUNITY</a>
+            <a href="/login">LOGIN</a>
+            {{#if logged_in}}
+            <a href="/">Log Out</a>
+            {{/if}}
+          </div>
+        </div>
+      </nav>
+</header>
 
     {{{body}}}
 
