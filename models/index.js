@@ -1,4 +1,4 @@
-const User = require("./User");
+const User = require("./user");
 const Profile = require("./Profile");
 
 User.hasOne(Profile, {
@@ -9,3 +9,6 @@ User.hasOne(Profile, {
 Profile.belongsTo(User, {
   foreignKey: "user_id",
 });
+module.exports = { 
+  User, Profile
+}
