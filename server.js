@@ -4,7 +4,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
-const helpers = require("./utils/helpers");
+// const helpers = require("./utils/helpers");
 const dotenv = require("dotenv").config();
 const bcrypt = require("bcrypt");
 const fns = require("date-fns"); //https://date-fns.org/v2.29.3/docs/Getting-Started
@@ -35,7 +35,7 @@ const sess = {
 app.use(session(sess));
 
 //handlebars and helpers
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 

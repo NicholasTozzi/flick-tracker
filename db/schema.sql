@@ -1,3 +1,4 @@
-DROP DATABASE IF EXSISTS flick_db;
+DROP DATABASE IF EXISTS flick_db;
 
 CREATE DATABASE flick_db;
+USE flick_db;
