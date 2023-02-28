@@ -4,33 +4,4 @@ const profileRoutes = require("./profileRoutes");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;

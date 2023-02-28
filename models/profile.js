@@ -2,39 +2,40 @@
 
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-//change
+
+class Profile extends Model {}
 
 Profile.init(
   {
     watched: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
-      defaultValue: [],
+      defaultValue:[]
     },
     watchlist: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
-      defaultValue: [],
+      defaultValue:[]
     },
     top5: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
-      defaultValue: [],
+      defaultValue:[]
     },
     followingActors: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
-      defaultValue: [],
+      defaultValue:[]
     },
     followingUsers: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
-      defaultValue: [],
+      defaultValue:[]
     },
     genre: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
-      defaultValue: [],
+      defaultValue:[]
     },
   },
   {
@@ -42,8 +43,8 @@ Profile.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "profile",
-  }
+    modelName: "profile"
+  },
 );
 
 module.exports = Profile;
