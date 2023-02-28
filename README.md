@@ -64,11 +64,11 @@ Have any questions? Feel free to reach any of our contributors via LinkdIn
 ## Front End
 
 - [ Avery](https://www.linkedin.com/in/avery-newhart-0654a9263/)
-- [ Jesse](https://github.com/jesseosborne615)
+- [ Jesse](www.linkedin.com/in/jesseosborne615)
 - [ Frankie](https://github.com/uhfrankie)
 
 ## Back End
 
 - [Nick](https://www.linkedin.com/in/nicholas-tozzi-a19992202/)
-- [ Jose](https://github.com/jdelvalle12)
+- [ Jose](https://www.linkedin.com/in/jose-del-valle-94993a124/)
 - [ Paul](https://www.linkedin.com/in/paul-d-angelo-jr-431407257/)
