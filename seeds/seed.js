@@ -13,7 +13,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const profile of profileData) {
+  for (const profile of ProfileData) {
     await Profile.create({
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });

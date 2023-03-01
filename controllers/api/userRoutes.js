@@ -43,13 +43,22 @@ router.post('/login', withAuth, async (req, res) => {
             res.status(400).json(message,"You are now logged in") //comma? Thought it was supposed to be a :
         }
 
+    } catch (err) {
+        res.status(400).json(err)
     }
-    catch {} //not done yet
 });
 
 // router.delete('/:id', withAuth, async (req, res) => {
 
 // });
 
-module.exports = router;
+router.post("/logout", (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end()
+        })
+    } else {
+        res.status(404).end()
+    }
+})
 module.exports = router;
