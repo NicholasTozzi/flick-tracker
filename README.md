@@ -42,10 +42,17 @@
 
 # Installation
 
-installation
+### installation
 
 ```bash
   npm i
+```
+
+### Getting started
+
+```scripts
+    "seed": "node seeds/seed.js",
+    "start": "node server.js"
 ```
 
 # Usage
@@ -65,7 +72,7 @@ Have any questions? Feel free to reach any of our contributors via LinkdIn
 
 - [ Avery](https://www.linkedin.com/in/avery-newhart-0654a9263/)
 - [ Jesse](www.linkedin.com/in/jesseosborne615)
-- [ Frankie](https://github.com/uhfrankie)
+- [ Frankie](https://www.linkedin.com/in/francesca-sanchez-a2026b268)
 
 ## Back End
 

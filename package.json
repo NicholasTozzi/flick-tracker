@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "seed": "node seeds/seed.js",
     "start": "node server.js"
   },
   "name": "flick-tracker",
