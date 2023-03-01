@@ -28,12 +28,38 @@ router.post('/signUp', async (req, res) => {
     } 
 });
 
-// router.post('/login', withAuth, async (req, res) => {
+router.post('/login', withAuth, async (req, res) => {
+    try {
+        const userData = await userData.fineOne( {where: {email: req.body.email } })
 
-// });
+        if (!userData) {
+            res.status(400).json({ message: "Incorrect E-Mail or Password. Check your spelling and capitalization and try again"})
+        return
+        }
+
+        const correctPass = await userData.checkPassword(req.body.password)
+
+        if (!correctPass) {
+            res.status(400).json(message,"You are now logged in") //comma? Thought it was supposed to be a :
+        }
+
+    } catch (err) {
+        res.status(400).json(err)
+    }
+});
 
 // router.delete('/:id', withAuth, async (req, res) => {
 
 // });
+
+router.post("/logout", (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end()
+        })
+    } else {
+        res.status(404).end()
+    }
+})
 
 module.exports = router;
