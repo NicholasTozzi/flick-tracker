@@ -8,31 +8,22 @@ class Profile extends Model {}
 Profile.init(
   {
     watched: {
-      type: DataTypes.TEXT,
-      //create SQL statement where you insert the movie to the user_id
+      type: DataTypes.STRING,
     },
     watchlist: {
-      type: DataTypes.TEXT,
-      // defaultValue: [],
+      type: DataTypes.STRING,
     },
     top5: {
-      type: DataTypes.TEXT,
-      // defaultValue: [],
+      type: DataTypes.JSON,
     },
     followingActors: {
-      type: DataTypes.TEXT,
-
-      // defaultValue: [],
+      type: DataTypes.STRING,
     },
     followingUsers: {
-      type: DataTypes.ARRAY(DataTypes.TEXT),
-
-      // defaultValue: [],
+      type: DataTypes.STRING,
     },
     genre: {
-      type: DataTypes.ARRAY(DataTypes.TEXT),
-
-      // defaultValue: [],
+      type: DataTypes.STRING,
     },
     user_id: {
       type: DataTypes.INTEGER,

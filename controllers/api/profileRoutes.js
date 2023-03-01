@@ -1,59 +1,61 @@
 const router = require("express").Router();
-const { Profile } = require('../../models');
-const withAuth = require('../../utils/auth');
-
+const { Profile } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //The `/api/profile` endpoint
-router.get('/', async (req, res) => {
-    // find all profiles
-    try {
-      const profileData = await Profile.findAll({
-        include: [{model: Profile }],
-      });
-      res.status(200).json(profileData);
-    } catch (err){
-        res.status(500).json(err);
-    }
+router.get("/", async (req, res) => {
+  // find all profiles
+  try {
+    const profileData = await Profile.findAll({
+      include: [{ model: Profile }],
+    });
+    res.status(200).json(profileData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get('/profile_id', async(req, res) => {
-    // find one profile by its `watched` value
-    try {
-      const profileData = await Profile.findByPk(req.params.id, {
-          include: [{model: Profile }]
-      });
-  
-      if (!profileData) {
-        res.status(404).json({ message: 'no profile found!'});
-        return;
-      }
-      res.status(200).json(profileData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-  
-router.post('/', async (req, res) => {
-      try {
-        const profileData = await Profile.create(req.body);
-        res.status(200).json(profileData);
-      } catch (err) {
-        res.status(400).json(err);
-      }
+router.get("/profile_id", async (req, res) => {
+  // find one profile by its `watched` value
+  try {
+    const profileData = await Profile.findByPk(req.params.id, {
+      include: [{ model: Profile }],
     });
 
-router.put('/id', async (req, res) => {
-    // update a profile by its `id` value
-    Profile.update(
-      {
-        id: req.body.id,
+    if (!profileData) {
+      res.status(404).json({ message: "no profile found!" });
+      return;
+    }
+    res.status(200).json(profileData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post("/", async (req, res) => {
+  try {
+    const newProfile = await Profile.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+    res.status(200).json(profileData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.put("/id", async (req, res) => {
+  // update a profile by its `id` value
+  Profile.update(
+    {
+      id: req.body.id,
+    },
+    {
+      where: {
+        id: req.params.id,
       },
-      {
-        where: {
-          id: req.params.id,
-        },
-      }
-    )
+    }
+  )
     .then((updatedProfile) => {
       res.json(updatedProfile);
     })
@@ -61,49 +63,45 @@ router.put('/id', async (req, res) => {
       console.log(err);
       res.json(err);
     });
-  });
-
-router.post('/id', async (req, res) => {
-    try {
-        const profileData = await Profile.create({
-            
-            watched: req.body.watched,
-            watchlist: req.body.watchlist,
-            top5: req.body.top5,
-            genre: req.body.genre,
-            followingActors: req.body.followingActors,
-            followingUsers: req.body.followingUsers,
-        });
-        req.session.save(() => {
-            req.session.id = profileData.id
-           
-            res.status(200).json({message:"Success!"});
-            
-        });
-    }
-    catch(err) {
-        res.status(500).json(err);
-          
-    } 
 });
 
-router.delete('/:id', async (req, res) => {
-        // delete a profile by its `id` value
-        try {
-          const profileData = await Profile.destroy({
-            where: {
-              id: req.params.id 
-            }
-          });
-      
-          if (!profileData) {
-            res.status(404).json({ message: 'no profile found'});
-            return;
-          }
-          res.status(200).json(profileData);
-        } catch (err) {
-          res.status(500).json(err);
-        }
+router.post("/id", async (req, res) => {
+  try {
+    const profileData = await Profile.create({
+      watched: req.body.watched,
+      watchlist: req.body.watchlist,
+      top5: req.body.top5,
+      genre: req.body.genre,
+      followingActors: req.body.followingActors,
+      followingUsers: req.body.followingUsers,
     });
+    req.session.save(() => {
+      req.session.id = profileData.id;
+
+      res.status(200).json({ message: "Success!" });
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  // delete a profile by its `id` value
+  try {
+    const profileData = await Profile.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!profileData) {
+      res.status(404).json({ message: "no profile found" });
+      return;
+    }
+    res.status(200).json(profileData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
