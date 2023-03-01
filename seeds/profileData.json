@@ -1,44 +1,16 @@
 [
   {
-    "watched": ["Shrek", "Shrek2", "Shrek3"],
-    "watchlist": ["Taken", "Wanted", "Memento"],
-    "top5": [
-      "Example Movie 1",
-      "Example Movie 2",
-      "Example Movie 3",
-      "Example Movie 4",
-      "Example Movie 5"
-    ],
-    "followingActors": ["Jenna Ortega", "Jack Black", "Billy Ray Cyrus"],
-    "followingUsers": [""],
-    "genre": [""]
-  },
-  {
-    "watched": ["Shrek", "Shrek2", "Shrek3"],
-    "watchlist": ["Taken", "Wanted", "Memento"],
-    "top5": [
-      "Example Movie 1",
-      "Example Movie 2",
-      "Example Movie 3",
-      "Example Movie 4",
-      "Example Movie 5"
-    ],
-    "followingActors": ["Jenna Ortega", "Jack Black", "Billy Ray Cyrus"],
-    "followingUsers": [""],
-    "genre": [""]
-  },
-  {
-    "watched": ["Shrek", "Shrek2", "Shrek3"],
-    "watchlist": ["Taken", "Wanted", "Memento"],
-    "top5": [
-      "Example Movie 1",
-      "Example Movie 2",
-      "Example Movie 3",
-      "Example Movie 4",
-      "Example Movie 5"
-    ],
-    "followingActors": ["Jenna Ortega", "Jack Black", "Billy Ray Cyrus"],
-    "followingUsers": [""],
-    "genre": [""]
+    "watched": "Shrek, Shrek2, Shrek3",
+    "watchlist": "Taken, Wanted, Memento",
+    "top5": {
+      "1": "movie1",
+      "2": "movie2",
+      "3": "movie3",
+      "4": "movie4",
+      "5": "movie5"
+    },
+    "followingActors": "Jenna Ortega, Jack Black, Billy Ray Cyrus",
+    "followingUsers": "",
+    "genre": ""
   }
 ]
