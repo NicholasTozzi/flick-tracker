@@ -1,4 +1,4 @@
-//? Make sure the syntax for "type:" works and is functional
+//TODO: finish this file
 
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
@@ -8,34 +8,38 @@ class Profile extends Model {}
 Profile.init(
   {
     watched: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
-      defaultValue:[]
+      type: DataTypes.TEXT,
+      //create SQL statement where you insert the movie to the user_id
     },
     watchlist: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
-      defaultValue:[]
+      type: DataTypes.TEXT,
+      // defaultValue: [],
     },
     top5: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
-      defaultValue:[]
+      type: DataTypes.TEXT,
+      // defaultValue: [],
     },
     followingActors: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
-      defaultValue:[]
+      type: DataTypes.TEXT,
+
+      // defaultValue: [],
     },
     followingUsers: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
-      defaultValue:[]
+      type: DataTypes.ARRAY(DataTypes.TEXT),
+
+      // defaultValue: [],
     },
     genre: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
-      defaultValue:[]
+      type: DataTypes.ARRAY(DataTypes.TEXT),
+
+      // defaultValue: [],
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
     },
   },
   {
@@ -43,8 +47,8 @@ Profile.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "profile"
-  },
+    modelName: "profile",
+  }
 );
 
 module.exports = Profile;
