@@ -10,7 +10,6 @@ router.post('/signUp', async (req, res) => {
         const userData = await User.create({
             // username: req.body.username,
             name: req.body.name,
-            email: req.body.email,
             password: req.body.password,
         })
         req.session.save(() => {
@@ -28,7 +27,7 @@ router.post('/signUp', async (req, res) => {
     } 
 });
 
-router.post('/login', withAuth, async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         const userData = await userData.fineOne( {where: {email: req.body.email } })
 
