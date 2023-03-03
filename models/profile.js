@@ -1,5 +1,3 @@
-//TODO: finish this file
-
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -8,19 +6,19 @@ class Profile extends Model {}
 Profile.init(
   {
     watched: {
-      type: DataTypes.STRING,
+      type: DataTypes.JSON,
     },
     watchlist: {
-      type: DataTypes.STRING,
+      type: DataTypes.JSON,
     },
     top5: {
       type: DataTypes.JSON,
     },
     followingActors: {
-      type: DataTypes.STRING,
+      type: DataTypes.JSON,
     },
     followingUsers: {
-      type: DataTypes.STRING,
+      type: DataTypes.JSON,
     },
     genre: {
       type: DataTypes.STRING,
