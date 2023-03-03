@@ -21,17 +21,17 @@ const app = express();
 const PORT = process.env.PORT || 3006;
 
 //Creating a cookie session
-app.use(cookieSession({
-  name: 'session',
-  keys: ["THIS TOOK ME FOREVER TO FIGURE OUT"], //This created the session to generate said cookies
+// app.use(cookieSession({
+//   name: 'session',
+//   keys: ["THIS TOOK ME FOREVER TO FIGURE OUT"], //This created the session to generate said cookies
 
-  // Cookie Options
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}))
+//   // Cookie Options
+//   maxAge: 24 * 60 * 60 * 1000 // 24 hours
+// }))
 
 //creating a session
 const sess = {
-  secret: ("THIS TOOK ME FOREVER TO FIGURE OUT"), //Still haven't figured this out
+  secret: "THIS TOOK ME FOREVER TO FIGURE OUT", //Still haven't figured this out
   cookie: {
     httpOnly: true,
     secure: false, //Read to change this to true. I changed it back to false so it was back to the way it was originally set.
