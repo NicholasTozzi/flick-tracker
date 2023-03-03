@@ -13,16 +13,28 @@ const fns = require("date-fns"); //https://date-fns.org/v2.29.3/docs/Getting-Sta
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
+//Cookie session variable
+const cookieSession = require('cookie-session') //This was needed for npm cookie-session. That generates cookies
+
 //creating instance of express application
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3006;
+
+//Creating a cookie session
+app.use(cookieSession({
+  name: 'session',
+  keys: ["THIS TOOK ME FOREVER TO FIGURE OUT"], //This created the session to generate said cookies
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 
 //creating a session
 const sess = {
-  Secret: "secret",
+  secret: ("THIS TOOK ME FOREVER TO FIGURE OUT"), //Still haven't figured this out
   cookie: {
     httpOnly: true,
-    secure: false,
+    secure: false, //Read to change this to true. I changed it back to false so it was back to the way it was originally set.
     sameSite: "strict",
   },
   resave: false,
