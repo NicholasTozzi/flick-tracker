@@ -37,6 +37,7 @@ const sess = {
     secure: false, //Read to change this to true. I changed it back to false so it was back to the way it was originally set.
     sameSite: "strict",
   },
+
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -61,5 +62,5 @@ app.use(routes);
 
 //starting sequelize server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log("Now listening"));
+  app.listen(PORT, () => console.log("http://localhost:3006"));
 });

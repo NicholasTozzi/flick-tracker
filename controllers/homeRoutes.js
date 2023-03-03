@@ -3,6 +3,7 @@ const { Profile, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
+  console.log("homeRoute")
   try {
     // Get all projects and JOIN with user data
     const profileData = await Profile.findAll({
@@ -13,6 +14,8 @@ router.get("/", async (req, res) => {
         },
       ],
     });
+    console.log(profileData)
+    
 
     // Serialize data so the template can read it
     const profiles = profileData.map((profile) => profile.get({ plain: true }));
@@ -23,9 +26,53 @@ router.get("/", async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
+
+// router.get("/", async (req, res) => {
+//   try {
+//     const profileData = await community.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ["name"],
+//         },
+//       ],
+//     });
+
+//     const profile = profileData.get({ plain: true });
+
+//     res.render("community", {
+//       community,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// // Use withAuth middleware to prevent access to route
+// router.get("/community", withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ["password"] },
+//       include: [{ model: Profile }],
+//     });
+
+//     const user = userData.get({ plain: true });
+
+//     res.render("community", {
+//       community,
+//       logged_in: true,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 
 router.get("/profile/:id", async (req, res) => {
   try {
