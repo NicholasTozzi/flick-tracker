@@ -1,0 +1,59 @@
+{{#each reviews as |review|}}
+      <div class="header555">
+      <h1>The Flick Tracker Community</h1>
+      </div>
+      <div class="bulk">
+      <div class="card text-center">
+        <div class="card-body">
+          <h4 style="text-align:left;">
+            {{review.name}}
+            <span style="float:right;">
+                {{review.date_created}}
+            </span>
+          </h4>
+      <p class="card-text">{{review.content}} - {{review.user_id}}</p>
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary">Save To Watchlist</button>
+            <button type="button" class="btn btn-outline-primary">Already Watched</button>
+            </div>
+        </div>
+      </div>
+      
+      <div class="card text-center">
+        <div class="card-body">
+          <h4 style="text-align:left;">
+            {{Movie Title}}
+            <span style="float:right;">
+                {{Date}}
+            </span>
+          </h4>
+      <p class="card-text">{{review.content}} - {{review.user_id}</p>
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary">Save To Watchlist</button>
+            <button type="button" class="btn btn-outline-primary">Already Watched</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="card text-center">
+        <div class="card-body">
+          <h4 style="text-align:left;">
+            {{Movie Title}}
+            <span style="float:right;">
+                {{Date}}
+            </span>
+          </h4>
+      <p class="card-text">{{review.content}} - {{review.user_id}}</p>
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary">Save To Watchlist</button>
+            <button type="button" class="btn btn-outline-primary">Already Watched</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    {{/each}}
+      
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

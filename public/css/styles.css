@@ -374,3 +374,82 @@ replaced by just the links.*/
     }
     
   }
+
+  .btn {
+    color:#C10206;
+    background-color: #DFE2db;
+    border-color: #211D21;
+    text-align: center;
+  }
+  
+    .col4 {
+      text-align: center;
+    }
+  
+    .card-body {
+      background-color: #211D21;
+      color: #C10206;
+      border: solid;
+      border: thick double;
+    border-color: #c10206;
+  
+    }
+  
+    
+   
+    .header555 {
+      margin-top: 15%;
+      text-align: center;
+      color: #C10206;
+    }
+
+    .col4 {
+      margin-top: -1%;
+      height:40%;
+      text-align: center;
+      background-color: #211d21;
+      color: #c10206;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyBXrl8YU7ZMFKDsG0I_UXuBYQcM0UEs-OnQ&usqp=CAU');
+      background-size: 50%;
+      background-position: left;
+     
+      background-repeat: no-repeat;
+      
+    }
+  
+  .col {
+    background-image: url('https://motionarray.imgix.net/preview-1078386-g75uVqYSdt-high_0000.jpg?w=660&q=60&fit=max&auto=format');
+    background-position: center;
+    align-items: center;
+    background-color: #211d21;
+    color: #c10206;
+    
+  }
+  
+  
+  
+  .bulky {
+    margin-top: 12%;
+  }
+  
+  .card {
+    color: #c10206;
+    background-repeat: no-repeat;
+    background-size:100%;
+    width: 80%;
+    text-align: center;
+  }
+  
+  
+  .card5 {
+    
+    align-self: center;
+    color: #c10206;
+    text-align: center;
+   
+    border: solid;
+    border: thick double;
+    border-color: #c10206;
+    background-position: center;
+    padding: 50px 0;
+  }
