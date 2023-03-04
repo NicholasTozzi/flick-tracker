@@ -380,3 +380,70 @@ replaced by just the links.*/
     }
     
   }
+
+  .hey {
+
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuTDCXJ2mAvAiXk7Cs84sIIcqYMaUxAGKLbQ&usqp=CAU');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+    align-items: center;
+  
+    color: #c10206;
+    width:fit-content;
+    height: fit-content;
+   
+    
+  }
+  
+  
+  
+  .bulky {
+    margin-top: 12%;
+  }
+  
+  
+  
+  .two {
+    
+    align-self: center;
+    color: #c10206;
+    text-align: center;
+    border: solid;
+    border: thick double;
+    border-color: #c10206;
+    background-position: center;
+    padding: 50px 0;
+  }
+  
+  .yo {
+    color:#C10206;
+    background-color: #DFE2db;
+    border-color: #211D21;
+    text-align: center;
+  }
+  
+   
+    .hello {
+      background-color: #211D21;
+      background-size: cover;
+      color: #C10206;
+      border: solid;
+      border: thick double;
+     border-color: #c10206;
+  
+    }
+  
+    
+   
+    .header555 {
+      margin-top: 15%;
+      text-align: center;
+      color: #C10206;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCzV5TV02oYZIoAJOO0JKcxl-MVhsJFNIKB6axw5qitYU0sD5_wqWY-fgYLK_ELK0DYu4&usqp=CAU');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      
+    }
+  
