@@ -15,9 +15,18 @@ const seedDatabase = async () => {
 
   for (const profile of ProfileData) {
     await Profile.create({
+      ...profile,
+
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
-  process.exit(0);
+
+  for (const review of ReviewData) {
+    await Review.create({
+      ...review,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+  process.exit(0); 
 };
 seedDatabase();

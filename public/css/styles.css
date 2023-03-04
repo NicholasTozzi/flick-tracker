@@ -1,21 +1,22 @@
 html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
-    margin:0;
-    padding:0;
-    font-family: sans-serif;
     background: rgba(33, 32, 32, 0.992);
-  }
+}
 
-  nav {
+nav {
+	background-color: rgba(33, 32, 32, 0.992);
 	overflow: hidden;
 	padding: 1em;
 	border-bottom: 2px solid #c10206;
-    margin-bottom: 20%;
+    /* margin-bottom: 20%; */
 }
 
 nav	a {
 		color: #c10206;
+        font-weight: bolder;
 }
 
 nav a:hover {
@@ -30,7 +31,7 @@ nav a:hover {
 
 nav .navWide {
 	display: none;
-	margin: 0 auto;
+	/* margin: 0 auto; */
 }
 
 nav .navWide .wideDiv {
@@ -43,22 +44,75 @@ nav .navWide .wideDiv a {
 	/*Adjust padding to increase/decrease the space between links.*/
 	padding: 0 2em;
 }
-	
 
-/*Adjust breakpoint as desired to select when the "hamburger" menu is
-replaced by just the links.*/
-@media (min-width: 480px) {
-	
-	nav .navWide {
-		display: block;
-	}
-
-	nav .navNarrow {
-		display: none;
-	}
+img {
+    max-width: 10vw;
+    max-height: 10vh;
 }
 
-  .login-box-1 {
+.bg {
+    position: fixed; 
+    top: 10; 
+    left: 0; 
+      
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  .corners {
+    border: 1px solid #C10206;
+    background-color: rgba(33, 32, 32, 0.992);
+    border-radius: 0 0 25px 25px;
+  }
+
+.head-col {
+    color: #C10206;
+    background-color: rgba(33, 32, 32, 0.992);
+    border: 2px solid #C10206;
+    box-shadow: 0 0 5px #C10206,
+                0 0 10px #C10206;
+}
+
+.body-div {
+    background-color: rgba(33, 32, 32, 0.992);
+    border: 2px solid #C10206;
+    color: #c10206;
+    box-shadow: white;
+}
+
+.body-div:hover {
+    background-color: #C10206;
+    color: white;
+    border: 1px solid #C10206;
+    box-shadow: 0 0 5px white,
+                0 0 10px white,
+                0 0 15px #C10206,
+                0 0 20px #C10206,
+                0 0 25px #C10206;
+}
+
+.content-div {
+    background-color: rgba(33, 32, 32, 0.992);
+    border: 1px solid #c10206;
+    color: white;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 0 5px #C10206,
+    0 0 10px #C10206;
+}
+
+.size-div-left {
+    padding-left: 20vw;
+}
+
+.size-div-right {
+    padding-right: 20vw;
+}
+
+.size {
+    margin-top: 18vh;
+}
+.login-box-1 {
     position: absolute;
     top: 50%;
     left: 35%;
@@ -69,6 +123,7 @@ replaced by just the links.*/
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    border: 1px solid #C10206;
   }
 
   .login-box-2 {
@@ -82,6 +137,7 @@ replaced by just the links.*/
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    border: 1px solid #C10206;
   }
   
   .login-box h2 {
@@ -125,7 +181,7 @@ replaced by just the links.*/
     font-size: 12px;
   }
   
-  .login-box form a {
+  .login-box form button {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -139,22 +195,22 @@ replaced by just the links.*/
     letter-spacing: 4px
   }
   
-  .login-box a:hover {
+  .login-box button:hover {
     background: #C10206;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #C10206,
+     box-shadow: 0 0 5px #C10206,
                 0 0 25px #C10206,
                 0 0 50px #C10206,
-                0 0 100px #C10206;
+                0 0 100px #C10206; 
   }
   
-  .login-box a span {
+  .login-box button span {
     position: absolute;
     display: block;
   }
   
-  .login-box a span:nth-child(1) {
+  .login-box button span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -172,7 +228,7 @@ replaced by just the links.*/
     }
   }
   
-  .login-box a span:nth-child(2) {
+  .login-box button span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -191,7 +247,7 @@ replaced by just the links.*/
     }
   }
   
-  .login-box a span:nth-child(3) {
+  .login-box button span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -210,7 +266,7 @@ replaced by just the links.*/
     }
   }
   
-  .login-box a span:nth-child(4) {
+  .login-box button span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -227,4 +283,100 @@ replaced by just the links.*/
     50%,100% {
       bottom: 100%;
     }
+  }
+  
+  button {
+    background-color: rgba(0,0,0,.6);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border: none;
+  }
+
+	
+
+/*Adjust breakpoint as desired to select when the "hamburger" menu is
+replaced by just the links.*/
+@media (max-width: 480px) {
+    nav .navWide {
+		display: block;
+	}
+    .size {
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .bg {
+        display: none;
+    }
+    .corners {
+        background-color: rgba(0,0,0,.5);
+      }
+    
+    .head-col {
+        background-color: rgba(0, 0, 0, .5);
+    }
+    
+    .body-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .content-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .size {
+        margin-top: 2vh;
+    }
+}
+
+@media (max-width: 1160px) {
+	.size {
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .bg {
+        display: none;
+    }
+    .corners {
+        background-color: rgba(0,0,0,.5);
+      }
+    
+    .head-col {
+        background-color: rgba(0,0,0,.5);
+    }
+    
+    .body-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .content-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .size {
+        margin-top: 2vh;
+    }
+}
+
+
+@media (min-width: 480px) {
+	
+	nav .navWide {
+		display: block;
+	}
+}
+
+@media (max-width: 1295px) {
+    .login-box-1 {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      width: 400px;
+      padding: 40px;
+      margin-top: 10vh;
+    }
+  
+    .login-box-2 {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      width: 400px;
+      padding: 40px;
+      margin-top: 30vh;
+    }
+    
   }

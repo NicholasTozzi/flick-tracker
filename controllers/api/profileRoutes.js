@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/profile_id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   // find one profile by its `watched` value
   try {
     const profileData = await Profile.findByPk(req.params.id, {
@@ -32,11 +32,11 @@ router.get("/profile_id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res) => { //belongs in the user route "signUp"
   try {
     const newProfile = await Profile.create({
       ...req.body,
-      user_id: req.session.user_id,
+      user_id: req.session.user_id, //Take session out. Creating profile isn't a session
     });
     res.status(200).json(profileData);
   } catch (err) {
