@@ -8,7 +8,7 @@ const loginFormHandler = async (event) => {
   
     if (username && password) {
       // Send the username and password to the server
-      const response = await fetch('/api/users/login', { // here?????
+      const response = await fetch('/api/user/login', { // here?????
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -45,9 +45,11 @@ const loginFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.login-form')
+    .querySelector('#login-form')
     .addEventListener('submit', loginFormHandler);
+    // console.log()
+    // console.log("username")
   
   document
-    .querySelector('.signup-form')
+    .querySelector('#signup-form')
     .addEventListener('submit', signupFormHandler);

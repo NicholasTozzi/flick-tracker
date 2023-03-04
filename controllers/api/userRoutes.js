@@ -5,44 +5,56 @@ const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //For the user to sign up. If we would like to put a username in the model we can.
-router.post('/signUp', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const userData = await User.create({
-            // username: req.body.username,
-            name: req.body.name,
+            username: req.body.username,
             password: req.body.password,
         })
         req.session.save(() => {
-            req.session.id = userData.id
+            req.session.user_id = userData.id
             req.session.logged_in = true
 
             //200 code is for testing purposes
-            res.status(200).json({message:"Successish!"});
-            // res.redirect("/profile")
+            res.status(200).json(userData);
+            res.redirect("/profile")
         })
     }
-    catch(err) {
+    catch (err) {
         res.status(500).json(err);
-        //Collaborate with front end.   
-    } 
+        //Collaborate with front end.
+    }
 });
 
 router.post('/login', async (req, res) => {
     try {
-        const userData = await userData.fineOne( {where: {email: req.body.email } })
+        const userData = await User.findOne({ where: { username: req.body.username } })
+        console.log(userData)
 
         if (!userData) {
-            res.status(400).json({ message: "Incorrect E-Mail or Password. Check your spelling and capitalization and try again"})
-        return
+            res.status(400).json({ message: "Incorrect Name and/or Password. Check your spelling and capitalization and try again" })
+            return
         }
-
-        const correctPass = await userData.checkPassword(req.body.password)
+        // console.log(User.checkPassword)
+        const correctPass = await userData.checkPassword(req.body.password) //changed to User
+        console.log(correctPass, 'correct pass')
 
         if (!correctPass) {
-            res.status(400).json(message,"You are now logged in") //comma? Thought it was supposed to be a :
+            res
+                .status(400)
+                .json({ message: "Incorrect Name and/or Password. Check your spelling and capitalization and try again" });
+            return;
         }
+        console.log('thereq',req.session)
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+
+            res.json({ user: userData, message: 'You are now logged in!' });
+        });
 
     } catch (err) {
+        console.log(err)
         res.status(400).json(err)
     }
 });

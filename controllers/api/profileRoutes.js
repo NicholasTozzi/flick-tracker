@@ -38,7 +38,7 @@ router.post("/", async (req, res) => { //belongs in the user route "signUp"
       ...req.body,
       user_id: req.session.user_id, //Take session out. Creating profile isn't a session
     });
-    res.status(200).json(profileData);
+    res.status(200).json(newProfile); //Changed to newProfile to match variable
   } catch (err) {
     res.status(400).json(err);
   }
@@ -91,6 +91,7 @@ router.delete("/:id", async (req, res) => {
     const profileData = await Profile.destroy({
       where: {
         id: req.params.id,
+        
       },
     });
 
