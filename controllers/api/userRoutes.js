@@ -11,6 +11,8 @@ router.post('/', async (req, res) => {
             username: req.body.username,
             password: req.body.password,
         })
+        // const userData = await User.create(req.body);  (here???????)
+
         req.session.save(() => {
             req.session.user_id = userData.id
             req.session.logged_in = true
@@ -21,7 +23,7 @@ router.post('/', async (req, res) => {
         })
     }
     catch (err) {
-        res.status(500).json(err);
+        res.status(400).json(err);
         //Collaborate with front end.
     }
 });
