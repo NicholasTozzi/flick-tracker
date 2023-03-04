@@ -7,6 +7,7 @@ router.get("/", async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const profileData = await Profile.findAll({
+      // might not need all of this for the homepage since no new data actually appears on this screen.
       include: [
         {
           model: User,
