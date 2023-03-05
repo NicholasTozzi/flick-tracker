@@ -48,7 +48,7 @@ const sess = {
 app.use(session(sess));
 
 //handlebars and helpers
-const hbs = exphbs.create({ });
+const hbs = exphbs.create({ }); // here maybe??
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
