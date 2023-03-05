@@ -4,29 +4,21 @@ const router = require("express").Router();
 const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//For the user to sign up. If we would like to put a username in the model we can.
+// CREATE new user
 router.post('/', async (req, res) => {
     try {
-        const userData = await User.create({
-            username: req.body.username,
-            password: req.body.password,
-        })
-        // const userData = await User.create(req.body);  (here???????)
-
-        req.session.save(() => {
-            req.session.user_id = userData.id
-            req.session.logged_in = true
-
-            //200 code is for testing purposes
+        const userData = await User.create(req.body);
+  
+          req.session.save(() => {
+            req.session.logged_in = true;
+      
             res.status(200).json(userData);
-            res.redirect("/profile")
-        })
-    }
-    catch (err) {
-        res.status(400).json(err);
-        //Collaborate with front end.
-    }
-});
+          });
+        } catch (err) {
+          console.log(err);
+          res.status(500).json(err);
+        }
+      });
 
 router.post('/login', async (req, res) => {
     try {
