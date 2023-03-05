@@ -1,5 +1,5 @@
 const User = require("./user");
-const Profile = require("./Profile");
+const Profile = require("./profile");
 const Review = require("./review"); //define relationship for views
 
 //parent relationship

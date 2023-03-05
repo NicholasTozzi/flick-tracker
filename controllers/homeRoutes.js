@@ -7,10 +7,11 @@ router.get("/", async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const profileData = await Profile.findAll({
+      // might not need all of this for the homepage since no new data actually appears on this screen.
       include: [
         {
           model: User,
-          attributes: ["name"],
+          attributes: ["username"],
         },
       ],
     });
@@ -31,47 +32,48 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get("/", async (req, res) => {
-//   try {
-//     const profileData = await community.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ["name"],
-//         },
-//       ],
-//     });
+router.get("/", async (req, res) => {
+  try {
+    const profileData = await community.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
 
-//     const profile = profileData.get({ plain: true });
+    const profile = profileData.get({ plain: true });
+    console.log(profile)
 
-//     res.render("community", {
-//       community,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render("community", {
+      community,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// // Use withAuth middleware to prevent access to route
-// router.get("/community", withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ["password"] },
-//       include: [{ model: Profile }],
-//     });
+// Use withAuth middleware to prevent access to route
+router.get("/community", async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Profile }],
+    });
 
-//     const user = userData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
-//     res.render("community", {
-//       community,
-//       logged_in: true,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render("community", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 router.get("/profile/:id", async (req, res) => {
@@ -80,7 +82,7 @@ router.get("/profile/:id", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["name"],
+          attributes: ["username"],
         },
       ],
     });
