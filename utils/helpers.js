@@ -1,37 +1,30 @@
-import { format, parseJSON, addDays, isFuture  } from 'date-fns'
-
-//Now
-import format from 'date-fns/format'
-
-const flickTrackerApp = () => {
-
-  const date = format(new Date(), 'MM/dd/yyyy');
-  const tomorrow =  addDays (date, 1);
-  const inTheFuture = isFuture(new Date());
-  const parse = parseJSON(date);
-}
-
-export default flickTrackerApp;
-
-
-// module.exports = {
-//   format_date: (date) => {
-    
-//     // Format date as MM/DD/YYYY
-//       const date = new Date();
-//       return date.toLocaleDateString();
-//     },
-//     future_date: (futureDate) => {
-//       //future date from now
-//       const futureDate = isFuture(new Date(3, 2, 2023), 30);    
-//       return futureDate.toLocaleDateString();
-//     },
-//     set_date: (setDate) => {
-//       //Set the day of the month to the given date.
-//       const date = setDate(new Date(2023, 3, 2), 30);
-//       return setDate.toLocaleDateString();
-//     }
-//   };
+//Exporting the function for the dates
+module.exports = {
+  format_date: (date) => {
+    // Format date as MM/DD/YYYY
+    return date.toLocaleDateString(new Date(), 'MM/dd/yyyy');
+    },
+  today_date: (currentDate) => {
+        //today's date
+        return currentDate.toLocaleDateString();
+    },
+  tomorrow_date: (tomorrowDate) => {
+    //adding number of days from today
+      return tomorrowDate.toLocaleDateString(currentDate, 1);
+    },
+  future_date: (futureDate) => {
+    //future date from now
+      return futureDate.toLocaleDateString(new Date(05, 04, 2023));
+    },
+  set_date: (setDate) => {
+    //Set the day of the month to the given date.
+      return setDate.toLocaleDateString(new Date(03, 06, 2023), {month: 12, date: 25, year: 2023});
+    },
+  parse_dates: (parseDates) => {
+    // parsing the dates
+      return parseDates.toLocaleDateString(currentDate, date, tomorrowDate, futureDate, setDate);
+    }
+  };
   
 
   

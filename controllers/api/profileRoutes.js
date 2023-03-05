@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  // find one profile by its `watched` value
+  // find one profile by its `id` value
   try {
     const profileData = await Profile.findByPk(req.params.id, {
       include: [{ model: Profile }],
