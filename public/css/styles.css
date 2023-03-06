@@ -291,97 +291,6 @@ img {
     border: none;
   }
 
-	
-
-/*Adjust breakpoint as desired to select when the "hamburger" menu is
-replaced by just the links.*/
-@media (max-width: 480px) {
-    nav .navWide {
-		display: block;
-	}
-    .size {
-        padding-right: 20vw;
-        padding-left: 20vw;
-    }
-    .bg {
-        display: none;
-    }
-    .corners {
-        background-color: rgba(0,0,0,.5);
-      }
-    
-    .head-col {
-        background-color: rgba(0, 0, 0, .5);
-    }
-    
-    .body-div {
-        background-color: rgba(0,0,0,.5);
-    }
-    .content-div {
-        background-color: rgba(0,0,0,.5);
-    }
-    .size {
-        margin-top: 2vh;
-    }
-}
-
-@media (max-width: 1160px) {
-	.size {
-        padding-right: 20vw;
-        padding-left: 20vw;
-    }
-    .bg {
-        display: none;
-    }
-    .corners {
-        background-color: rgba(0,0,0,.5);
-      }
-    
-    .head-col {
-        background-color: rgba(0,0,0,.5);
-    }
-    
-    .body-div {
-        background-color: rgba(0,0,0,.5);
-    }
-    .content-div {
-        background-color: rgba(0,0,0,.5);
-    }
-    .size {
-        margin-top: 2vh;
-    }
-}
-
-
-@media (min-width: 480px) {
-	
-	nav .navWide {
-		display: block;
-	}
-}
-
-@media (max-width: 1295px) {
-    .login-box-1 {
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      width: 400px;
-      padding: 40px;
-      margin-top: 10vh;
-    }
-  
-    .login-box-2 {
-      position: absolute;
-      top: 65%;
-      left: 50%;
-      width: 400px;
-      padding: 40px;
-      margin-top: 30vh;
-    }
-    
-  }
-
-
   /* Community */
 
 
@@ -489,3 +398,113 @@ replaced by just the links.*/
     border-color: #C10206;
     border-radius: 1px;
   }
+
+  @media (max-width: 610px) {
+    nav .navWide {
+		display: block;
+	}
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .size {
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .bg {
+        display: none;
+    }
+    .corners {
+        background-color: rgba(0,0,0,.5);
+      }
+    
+    .head-col {
+        background-color: rgba(0, 0, 0, .5);
+    }
+    
+    .body-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .content-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .size {
+        margin-top: 2vh;
+    }
+}
+
+@media (max-width: 1160px) {
+	.size {
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .bg {
+        display: none;
+    }
+    .corners {
+        background-color: rgba(0,0,0,.5);
+      }
+    
+    .head-col {
+        background-color: rgba(0,0,0,.5);
+    }
+    
+    .body-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .content-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .size {
+        margin-top: 2vh;
+    }
+}
+
+
+@media (min-width: 480px) {
+	
+	nav .navWide {
+		display: block;
+	}
+}
+
+@media (max-width: 1052px) {
+  .login-box-1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 40px;
+    margin-top: 10vh;
+  }
+
+  .login-box-2 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    padding: 40px;
+    margin-top: 30vh;
+  }
+  
+}
+
+@media (max-width: 1295px) {
+  .login-box-1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    margin-top: 10vh;
+  }
+
+  .login-box-2 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    margin-top: 30vh;
+  }
+  
+}
