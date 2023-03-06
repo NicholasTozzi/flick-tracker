@@ -1,56 +1,26 @@
-{{#each reviews as |review|}}
-      <div class="header555">
-      <h1>The<br> Flick Tracker<br> Community<br></h1>
-      </div>
-      <div class="bulk">
-      <div class="card text-center 12">
-        <div class="card-body hello">
-          <h4 style="text-align:left;">
-            {{review.name}}
-            <span style="float:right;">
-                {{review.date_created}}
-            </span>
-          </h4>
-      <p class="card-text heyo">{{review.content}} - {{review.user_id}}</p>
-          <div class="btn-group jesse" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-outline-primary yo">Save To Watchlist</button>
-            <button type="button" class="btn btn-outline-primary yo">Already Watched</button>
-            </div>
-        </div>
-      </div>
-      
-      <div class="card text-center center">
-        <div class="card-body hello">
-          <h4 style="text-align:left;">
-            {{review.name}}
-            <span style="float:right;">
-                {{review.date_created}}
-            </span>
-          </h4>
-      <p class="card-text heyo">{{review.content}} - {{review.user_id}</p>
-          <div class="btn-group jesse" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-outline-primary yo">Save To Watchlist</button>
-            <button type="button" class="btn btn-outline-primary yo">Already Watched</button>
-            </div>
-        </div>
-      </div>
-
-      <div class="card text-center heyo">
-        <div class="card-body hello">
-          <h4 style="text-align:left;">
-            {{review.name}}
-            <span style="float:right;">
-                {{review.date_created}}
-            </span>
-          </h4>
-      <p class="card-text heyoo">{{review.content}} - {{review.user_id}}</p>
-      
-          <div class="btn-group jesse" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-outline-primary yo">Save To Watchlist</button>
-            <button type="button" class="btn btn-outline-primary yo">Already Watched</button>
-            </div>
-        </div>
+<div class="header community">
+  {{#if reviews.length}}
+  <h1>The Flick Tracker Community<br></h1>
+</div>
+<div class="bulks">
+  <div class="card text-center 12 shrek">
+    {{#each review as |review|}}
+    <div class="card-body communityBody">
+      <h4 style="text-align:left;">
+        {{review.name}}
+        <span style="float:right;">
+          {{review.date_created}}
+        </span>
+      </h4>
+      <p class="card-text hey">{{review.content}} - {{review.user_id}}</p>
+      <div class="btn-group jesse" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary saveToWatchlist">Save To Watchlist</button>
+        <button type="button" class="btn btn-outline-primary alreadyWatched">Already Watched</button>
       </div>
     </div>
-    
-    {{/each}}
+  </div>
+  {{else}}
+  <h1>Nothing To See Yet</h1>
+  {{/each}}
+</div>
+{{/if}}

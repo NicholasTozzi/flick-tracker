@@ -1,29 +1,29 @@
 const router = require("express").Router();
-const { Profile, User } = require("../models");
+const { Profile, User, Review } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   console.log("homeRoute")
   try {
     // Get all projects and JOIN with user data
-    const profileData = await Profile.findAll({
-      // might not need all of this for the homepage since no new data actually appears on this screen.
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
-    });
-    console.log(profileData)
+    // const profileData = await Profile.findAll({
+    //   // might not need all of this for the homepage since no new data actually appears on this screen.
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ["username"],
+    //     },
+    //   ],
+    // });
+    // console.log(profileData)
     
 
-    // Serialize data so the template can read it
-    const profiles = profileData.map((profile) => profile.get({ plain: true }));
+    // // Serialize data so the template can read it
+    // const profiles = profileData.map((profile) => profile.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render("homepage", {
-      profiles,
+      // profiles,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -32,36 +32,36 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const profileData = await community.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
-    });
+// router.get("/", async (req, res) => {
+//   try {
+//     const profileData = await community.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ["username"],
+//         },
+//       ],
+//     });
 
-    const profile = profileData.get({ plain: true });
-    console.log(profile)
+//     const profile = profileData.get({ plain: true });
+//     console.log(profile)
 
-    res.render("community", {
-      community,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render("community", {
+//       community,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // Use withAuth middleware to prevent access to route
-router.get("/community", async (req, res) => {
+router.get("/community", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: Profile }],
+      include: [{ model: Profile, Review }],
     });
 
     const user = userData.get({ plain: true });
@@ -98,23 +98,23 @@ router.get("/profile/:id", async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get("/profile", withAuth, async (req, res) => {
+// The dashboard page, getting users data based off their login info.
+router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-      include: [{ model: Profile }],
+    const userData = await User.findByPk(req.session.user_id, { // using session id, to get the currently logged in user, to display THEIR blogs.
+      attributes: { exclude: ['password'] }, // excluding the password so nobody can see it.
+      include: [{ model: Profile, Review }],
     });
 
     const user = userData.get({ plain: true });
-
-    res.render("profile", {
+    
+    res.render('profile', { // rendering/sending all content(if any) to the dashboard page.
       ...user,
-      logged_in: true,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log(err)
   }
 });
 

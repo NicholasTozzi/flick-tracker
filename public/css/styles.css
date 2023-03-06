@@ -381,69 +381,103 @@ replaced by just the links.*/
     
   }
 
-  .hey {
 
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuTDCXJ2mAvAiXk7Cs84sIIcqYMaUxAGKLbQ&usqp=CAU');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    
-    align-items: center;
-  
-    color: #c10206;
-    width:fit-content;
-    height: fit-content;
-   
-    
-  }
-  
-  
-  
-  .bulky {
-    margin-top: 12%;
-  }
-  
-  
-  
-  .two {
-    
-    align-self: center;
-    color: #c10206;
-    text-align: center;
-    border: solid;
-    border: thick double;
-    border-color: #c10206;
-    background-position: center;
-    padding: 50px 0;
-  }
-  
-  .yo {
-    color:#C10206;
-    background-color: #DFE2db;
+  /* Community */
+
+
+  .saveToWatchlist {
+    background: linear-gradient(270deg, transparent, #C10206);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s;
     border-color: #211D21;
-    text-align: center;
+    color:#dfe2db;
+    
+  }
+  
+  .alreadyWatched {
+    background: linear-gradient(270deg, transparent, #C10206);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s;
+    border-color: #211D21;
+    color:#dfe2db;
+    
   }
   
    
-    .hello {
-      background-color: #211D21;
-      background-size: cover;
-      color: #C10206;
-      border: solid;
-      border: thick double;
-     border-color: #c10206;
-  
-    }
-  
-    
-   
-    .header555 {
-      margin-top: 15%;
-      text-align: center;
-      color: #C10206;
-      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCzV5TV02oYZIoAJOO0JKcxl-MVhsJFNIKB6axw5qitYU0sD5_wqWY-fgYLK_ELK0DYu4&usqp=CAU');
+    .communityBody {
+      background-image: url('https://media.istockphoto.com/id/1286371622/photo/abstract-red-and-black-are-light-pattern-with-the-gradient-is-the-with-floor-wall-metal.jpg?b=1&s=170667a&w=0&k=20&c=RDAl7ILbKJESFDPeKnahjdPz4ElZa67VMJghhHIHwJE=');
       background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
+      background-size: cover;
+      color: #fffbf2;
+      border-color: #211D21;
+      border: solid;
       
     }
   
+    
+   
+    .community {
+      margin-top: 15%;
+    -webkit-text-stroke: 2px #C10206;
+    text-align: center;
+    font-size: 100px;
+    color: rgba(33, 32, 32, 0.992);
+  
+      }
+  
+  
+    
+   
+    
+  
+     /* Reviews */
+   .reviewpg {
+    background-color: #211D21;
+  }
+
+  .movie-box {
+    padding: 40px;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+    margin: auto;
+  }
+
+  .addrev-btn {
+    color: #C10206;
+    letter-spacing: normal;
+    font-size: medium;
+    padding: 10px 15px;
+  }
+
+  .reviews-box {
+    padding: 40px;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+    margin: auto;
+  }
+
+  .watchlist-box {
+    padding: 40px;
+    margin: auto;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+  }
+
+  .recently-watched {
+    padding: 40px;
+    margin: auto;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+  }

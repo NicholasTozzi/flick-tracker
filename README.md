@@ -73,7 +73,7 @@ Have any questions? Feel free to reach any of our contributors via LinkdIn
 ## Front End
 
 - [ Avery](https://www.linkedin.com/in/avery-newhart-0654a9263/)
-- [ Jesse](www.linkedin.com/in/jesseosborne615)
+- [ Jesse](https://www.linkedin.com/in/jesseosborne615)
 - [ Frankie](https://www.linkedin.com/in/francesca-sanchez-a2026b268)
 
 ## Back End
