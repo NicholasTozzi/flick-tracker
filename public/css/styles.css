@@ -447,3 +447,54 @@ replaced by just the links.*/
       
     }
   
+     /* Reviews */
+   .reviewpg {
+    background-color: #211D21;
+  }
+
+  .movie-box {
+    padding: 40px;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+    margin: auto;
+  }
+
+  .addrev-btn {
+    color: #C10206;
+    letter-spacing: normal;
+    font-size: medium;
+    padding: 10px 15px;
+  }
+
+  .reviews-box {
+    padding: 40px;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+    margin: auto;
+  }
+
+  .watchlist-box {
+    padding: 40px;
+    margin: auto;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+  }
+
+  .recently-watched {
+    padding: 40px;
+    margin: auto;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+  }
