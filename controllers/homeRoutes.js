@@ -118,23 +118,35 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get('/review', withAuth, async (req, res) => {
+router.get('/review', async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, { // using session id, to get the currently logged in user, to display THEIR blogs.
-      attributes: { exclude: ['password'] }, // excluding the password so nobody can see it.
-      include: [{ model: Profile, Review }],
-    });
+  //   const reviewData = await Review.findByPk(req.params.user_id, {
+  //     include: [
+  //       {
+  //         model: User, Profile,
+  //         attributes: ["username"],
+  //       },
+  //     ],
+  //   });
 
-    const user = userData.get({ plain: true });
+  //   const review = reviewData.get({ plain: true });
     
-    res.render('review', { // rendering/sending all content(if any) to the dashboard page.
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-    console.log(err)
-  }
+  //   res.render('review', { // rendering/sending all content(if any) to the dashboard page.
+  //     ...review,
+  //     logged_in: true
+  //   });
+  // } catch (err) {
+  //   res.status(500).json(err);
+  //   console.log(err)
+  res.render("review", {
+    // profiles,
+    // logged_in: req.session.logged_in,
+  });
+} catch (err) {
+  console.log(err)
+  res.status(500).json(err);
+}
+  // }
 });
 
 router.get("/login", (req, res) => {

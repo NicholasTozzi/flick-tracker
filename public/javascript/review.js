@@ -14,7 +14,7 @@ const newReviewSubmit = async event => {
      });
 
      if (response.ok) {
-       document.location.replace("/dashboard");
+       document.location.replace("/profile");
        alert("Review Created");
      } else {
        alert("Failed to create review");
@@ -24,4 +24,4 @@ const newReviewSubmit = async event => {
 
 document
 .querySelector(".new-review")
-.addEventListener("submit", newBlogSubmit);
+.addEventListener("submit", newReviewSubmit);
