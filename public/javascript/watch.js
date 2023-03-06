@@ -22,13 +22,13 @@ const alreadyWatchedHandler = async (event) => {
     }
 }
 
-const addToWatchlistHandler = asynce (event) => {
+const addToWatchlistHandler = async (event) => {
     event.preventDefault();
 
     const addedToList = document.querySelector("#watch-later").value.trim();
 
     if (addedToList) {
-        const response = await fetch ('/api/watch' {
+        const response = await fetch ('/api/watch/later', {
             method: 'POST',
             body: JSON.stringify({addedToList}),
             headers: {'Content-Type': 'application/json'},
@@ -47,4 +47,8 @@ const addToWatchlistHandler = asynce (event) => {
 
 document
 .querySelector("watched-already")
-.addEventListener("submit", alreadyWatchedHandler)
+.addEventListener("submit", alreadyWatchedHandler);
+
+document
+.querySelector("addTo-watchLater")
+.addEventListener("submit", addToWatchlistHandler);
