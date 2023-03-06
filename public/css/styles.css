@@ -424,6 +424,10 @@ replaced by just the links.*/
     color: rgba(33, 32, 32, 0.992);
   
       }
+
+    .profileHeader {
+      text-align: center;
+    }
   
   
     

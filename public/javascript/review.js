@@ -24,4 +24,4 @@ const newReviewSubmit = async event => {
 
 document
 .querySelector(".new-review")
-.addEventListener("submit", newBlogSubmit);
+.addEventListener("submit", newReviewSubmit);
