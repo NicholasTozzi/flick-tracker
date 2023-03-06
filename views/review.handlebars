@@ -25,7 +25,7 @@
                     {{movie.genre}}
                   </p>
                   
-                  <button type="button" class="btn addrev-btn"
+                  <button type="button" class="btn addrev-btn" id=""
                     style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                     Add Review
                   </button>
@@ -55,7 +55,7 @@
           <div class="card">
             <div class="card-body">
               <h6 class="card-title">
-                {{review.user_id}}
+                {{review.movie}}
               </h6>
               <h7 class="card-subtitle mb-2 text-muted">
                 {{review.date_created}}
@@ -111,7 +111,7 @@
               </div>
             </div>
           </div>
-          <script src="/public/javascript/review.js"></script>
+
         </div>
       </div>
     </div>
