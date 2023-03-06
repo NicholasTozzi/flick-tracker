@@ -13,13 +13,13 @@ const newReviewSubmit = async event => {
       }
     });
 
-    if (response.ok) {
-      document.location.replace("/dashboard");
-      alert("Review Created");
-    } else {
-      alert("Failed to create review");
-    }
-  }
-};
+     if (response.ok) {
+       document.location.replace("/profile");
+       alert("Review Created");
+     } else {
+       alert("Failed to create review");
+     }
+   }
+ };
 
 document.querySelector(".new-review").addEventListener("submit", newBlogSubmit);

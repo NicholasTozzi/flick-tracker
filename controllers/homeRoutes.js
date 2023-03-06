@@ -118,6 +118,37 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+router.get('/review', async (req, res) => {
+  try {
+  //   const reviewData = await Review.findByPk(req.params.user_id, {
+  //     include: [
+  //       {
+  //         model: User, Profile,
+  //         attributes: ["username"],
+  //       },
+  //     ],
+  //   });
+
+  //   const review = reviewData.get({ plain: true });
+    
+  //   res.render('review', { // rendering/sending all content(if any) to the dashboard page.
+  //     ...review,
+  //     logged_in: true
+  //   });
+  // } catch (err) {
+  //   res.status(500).json(err);
+  //   console.log(err)
+  res.render("review", {
+    // profiles,
+    // logged_in: req.session.logged_in,
+  });
+} catch (err) {
+  console.log(err)
+  res.status(500).json(err);
+}
+  // }
+});
+
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
