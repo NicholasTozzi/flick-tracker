@@ -6,6 +6,6 @@ router.use("/user", userRoutes)
 
 router.use("/profile", profileRoutes)
 
-router.use("/watch", watchRoutes) // for watch.js and the routes file
+// router.use("/watch", watchRoutes) // for watch.js and the routes file
 
 module.exports = router;
