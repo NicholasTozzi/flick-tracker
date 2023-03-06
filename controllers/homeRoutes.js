@@ -118,6 +118,25 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+router.get('/review', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, { // using session id, to get the currently logged in user, to display THEIR blogs.
+      attributes: { exclude: ['password'] }, // excluding the password so nobody can see it.
+      include: [{ model: Profile, Review }],
+    });
+
+    const user = userData.get({ plain: true });
+    
+    res.render('review', { // rendering/sending all content(if any) to the dashboard page.
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(err)
+  }
+});
+
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Profile } = require("../../models");
+const { Profile, User, Review } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //The `/api/profile` endpoint
@@ -104,5 +104,6 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;
