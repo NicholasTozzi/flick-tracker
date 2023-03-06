@@ -5,8 +5,8 @@
         <div class="movie-box">
           <div class="card mb-3">
             <div>
-              <input>
-              <button>Search Movie</button>
+              <input id="movie-title">
+              <button type="submit">Search Movie</button>
             </div>
             {{!-- <div class="row g-0">
               <div class="col-md-4">
@@ -34,13 +34,7 @@
             </div> --}}
         <form class="new-review">
       <div class="form-group">
-        <label for="review-title">Movie Name:</label>
-        <input
-          class="form-input-d"
-          type="text"
-          id="review-title"
-          name="review-title"
-        />
+        {{review.movie}}
       </div>
       <div class="form-group">
         <label for="review-content">Review Content:</label>

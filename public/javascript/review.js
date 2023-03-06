@@ -22,6 +22,34 @@ const newReviewSubmit = async event => {
    }
  };
 
+ const searchMovie = async event => {
+    event.preventDefault();
+
+    const movieTitle = document.querySelector("#movie-title").value.trim();
+
+    if (movieTitle) {
+        const response = await fetch(`/api/reviews/movie`, {
+            method: "POST",
+            body: JSON.stringify({movieTitle}),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (response.ok) {
+            document.location.replace("/profile");
+            alert("Movie Searched");
+          } else {
+            alert("Failed to search movie!");
+          }
+        }
+    };
+
+
 document
 .querySelector(".new-review")
 .addEventListener("submit", newReviewSubmit);
+
+document
+.querySelector("new-movie")
+.addEventListener("submit", searchMovie);
