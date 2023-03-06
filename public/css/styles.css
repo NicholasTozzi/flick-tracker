@@ -426,7 +426,11 @@ replaced by just the links.*/
       }
 
     .profileHeader {
-      text-align: center;
+      margin-top: 2%;
+    -webkit-text-stroke: 2px #C10206;
+    text-align: center;
+    font-size: 100px;
+    color: rgba(33, 32, 32, 0.992);
     }
   
   
