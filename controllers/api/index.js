@@ -2,13 +2,14 @@ const router = require("express").Router();
 const userRoutes = require("./userRoutes");
 const profileRoutes = require("./profileRoutes");
 const reviewPost = require("./reviewPost");
+const watchRoutes = require("./watchRoutes");
 
-router.use("/user", userRoutes)
+router.use("/user", userRoutes);
 
-router.use("/profile", profileRoutes)
+router.use("/profile", profileRoutes);
 
-router.use("/review", reviewPost)
+router.use("/review", reviewPost);
 
-// router.use("/watch", watchRoutes) // for watch.js and the routes file
+router.use("/watch", watchRoutes);
 
 module.exports = router;
