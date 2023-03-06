@@ -22,6 +22,27 @@ const alreadyWatchedHandler = async (event) => {
     }
 }
 
+const addToWatchlistHandler = asynce (event) => {
+    event.preventDefault();
+
+    const addedToList = document.querySelector("#watch-later").value.trim();
+
+    if (addedToList) {
+        const response = await fetch ('/api/watch' {
+            method: 'POST',
+            body: JSON.stringify({addedToList}),
+            headers: {'Content-Type': 'application/json'},
+
+        });
+
+        if (response.ok) {
+            document.location.replace ('/profile');
+            alert('Added to Watchlist!')
+        } else {
+            alert ('Failed to Save to Watchlist!');
+        }
+    }
+}
 
 
 document
