@@ -140,7 +140,7 @@ router.get('/review', async (req, res) => {
   //   console.log(err)
   res.render("review", {
     // profiles,
-    // logged_in: req.session.logged_in,
+    logged_in: req.session.logged_in,
   });
 } catch (err) {
   console.log(err)
