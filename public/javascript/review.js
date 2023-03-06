@@ -22,28 +22,27 @@ const newReviewSubmit = async event => {
    }
  };
 
-//  const searchMovie = async event => {
-//     event.preventDefault();
+  const postMovie = async event => {
+     event.preventDefault();
 
-//     const movieTitle = document.querySelector("#movie-title").value.trim();
+     const movieTitle = document.querySelector("#movie-title").value.trim();
 
-//     if (movieTitle) {
-//         const response = await fetch(`/api/review/movie`, {
-//             method: "POST",
-//             body: JSON.stringify({movieTitle}),
-//             headers: {
-//                 "Content-Type": "application/json"
-//             }
-//         });
+     if (movieTitle) {
+         const response = await fetch(`/api/review/search`, {
+             method: "POST",
+             body: JSON.stringify({movieTitle}),
+             headers: {
+                 "Content-Type": "application/json"
+             }
+        });
 
-//         if (response.ok) {
-//             document.location.replace("/profile");
-//             alert("Movie Searched");
-//           } else {
-//             alert("Failed to search movie!");
-//           }
-//         }
-//     };
+         if (response.ok) {
+             document.location.replace("/profile");
+           } else {
+             alert("Failed to search movie!");
+           }
+         }
+     };
 
     const search = async event => {
         event.preventDefault();
@@ -57,6 +56,7 @@ const newReviewSubmit = async event => {
                 headers: {
                     "X-RapidAPI-Key": "d65415b0b4msha2b92f5899f8885p1dbaa1jsne278af2bc260",
                     "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
+                    "Content-Type": "application/json",
                   },
             });
     
