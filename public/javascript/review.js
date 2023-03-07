@@ -1,7 +1,7 @@
 const newReviewSubmit = async (event) => {
   event.preventDefault();
 
-  const reviewTitle = document.querySelector("#movie-title").value.trim();
+  const reviewTitle = document.querySelector("#review-title").value.trim();
   const reviewContent = document.querySelector("#review-content").value.trim();
 
   if (reviewTitle && reviewContent) {
