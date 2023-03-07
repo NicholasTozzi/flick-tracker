@@ -1,11 +1,11 @@
 const newReviewSubmit = async (event) => {
   event.preventDefault();
 
-  const reviewTitle = document.querySelector("#review-title").value.trim();
+  const reviewTitle = document.querySelector("#movie-title").value.trim();
   const reviewContent = document.querySelector("#review-content").value.trim();
 
   if (reviewTitle && reviewContent) {
-    const response = await fetch(`/api/review`, {
+    const response = await fetch("/api/review", {
       method: "POST",
       body: JSON.stringify({ reviewTitle, reviewContent }),
       headers: {
@@ -59,7 +59,8 @@ const search = async (event) => {
     const data = await response.json();
     console.log(data);
     if (response.ok) {
-      document.location.replace("/profile");
+      console.log(movieTitle);
+      //  document.location.replace("/profile");
     } else {
       alert("Failed to search movie!");
     }
