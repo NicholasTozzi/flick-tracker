@@ -1,5 +1,4 @@
 <div class="header community">
-  {{#if reviews.length}}
   <h1>The Flick Tracker Community<br></h1>
 </div>
 <div class="bulks">
@@ -9,7 +8,7 @@
       <h4 style="text-align:left;">
         {{review.name}}
         <span style="float:right;">
-          {{review.date_created}}
+          {{format_date date_created}}
         </span>
       </h4>
       <p class="card-text hey">{{review.content}} - {{review.user_id}}</p>
@@ -19,8 +18,5 @@
       </div>
     </div>
   </div>
-  {{else}}
-  <h1>Nothing To See Yet</h1>
   {{/each}}
 </div>
-{{/if}}
