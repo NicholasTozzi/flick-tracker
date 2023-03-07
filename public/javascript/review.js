@@ -1,8 +1,8 @@
 const newReviewSubmit = async event => {
-   event.preventDefault();
+  event.preventDefault();
 
-   const reviewTitle = document.querySelector("#review-title").value.trim();
-   const reviewContent = document.querySelector("#review-content").value.trim();
+  const reviewTitle = document.querySelector("#review-title").value.trim();
+  const reviewContent = document.querySelector("#review-content").value.trim();
 
    if (reviewTitle && reviewContent) {
      const response = await fetch(`/api/review`, {
@@ -98,7 +98,7 @@ document
 document
 .querySelector("new-movie")
 .addEventListener("submit", search);
-
+ routes=======
 // document
-// .querySelector("search-movie")
-// .addEventListener("submit", postMovie);
+// .querySelector("search-movie")// .addEventListener("submit", postMovie);
+ main
