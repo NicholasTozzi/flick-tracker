@@ -19,7 +19,7 @@ router.post('/later', async (req, res) => {
     }
 })
 
-module.exports = router
+module.exports = router;
 
 // routes for buttons 
 // one for "watched" will be /
