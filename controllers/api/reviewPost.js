@@ -3,7 +3,7 @@ const router = require("express").Router();
 const { Review } = require("../../models"); //getting Review from review model
 const userAuth = require("../../utils/auth");
 const axios = require("axios");
-//yankeedoodle
+
 router.post("/movie", (req, res) => {
   const options = {
     method: "GET",
@@ -31,7 +31,7 @@ router.post("/movie", (req, res) => {
 router.post("/", userAuth, async (req, res) => {
   try {
     const newReview = await Review.create({
-      review_movie: req.body.reviewMovie,
+      review_movie: req.body.movieTitle,
       review_content: req.body.reviewContent,
       review_creator: req.session.user_id,
     });
