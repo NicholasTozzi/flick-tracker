@@ -1,13 +1,13 @@
 <div class="header community">
+  {{#if reviews.length}}
   <h1>The Flick Tracker Community<br></h1>
 </div>
-{{#if reviews.length}}
 <div class="bulks">
   <div class="card text-center 12 shrek">
     {{#each review as |review|}}
     <div class="card-body communityBody">
       <h4 style="text-align:left;">
-        {{review.movie}}
+        {{review.name}}
         <span style="float:right;">
           {{review.date_created}}
         </span>

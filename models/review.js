@@ -11,7 +11,7 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    movie: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
