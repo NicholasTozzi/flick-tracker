@@ -3,7 +3,7 @@ const { Profile, User, Review } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
-  console.log("homeRoute")
+  console.log("homeRoute");
   try {
     // Get all projects and JOIN with user data
     // const profileData = await Profile.findAll({
@@ -16,7 +16,6 @@ router.get("/", async (req, res) => {
     //   ],
     // });
     // console.log(profileData)
-    
 
     // // Serialize data so the template can read it
     // const profiles = profileData.map((profile) => profile.get({ plain: true }));
@@ -27,7 +26,7 @@ router.get("/", async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -75,7 +74,6 @@ router.get("/community", async (req, res) => {
   }
 });
 
-
 router.get("/profile/:id", async (req, res) => {
   try {
     const profileData = await Profile.findByPk(req.params.id, {
@@ -99,53 +97,55 @@ router.get("/profile/:id", async (req, res) => {
 });
 
 // The dashboard page, getting users data based off their login info.
-router.get('/profile', withAuth, async (req, res) => {
+router.get("/profile", withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, { // using session id, to get the currently logged in user, to display THEIR blogs.
-      attributes: { exclude: ['password'] }, // excluding the password so nobody can see it.
+    const userData = await User.findByPk(req.session.user_id, {
+      // using session id, to get the currently logged in user, to display THEIR blogs.
+      attributes: { exclude: ["password"] }, // excluding the password so nobody can see it.
       include: [{ model: Profile, Review }],
     });
 
     const user = userData.get({ plain: true });
-    
-    res.render('profile', { // rendering/sending all content(if any) to the dashboard page.
+
+    res.render("profile", {
+      // rendering/sending all content(if any) to the dashboard page.
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
-    console.log(err)
+    console.log(err);
   }
 });
 
-router.get('/review', async (req, res) => {
+router.get("/review", async (req, res) => {
   try {
-  //   const reviewData = await Review.findByPk(req.params.user_id, {
-  //     include: [
-  //       {
-  //         model: User, Profile,
-  //         attributes: ["username"],
-  //       },
-  //     ],
-  //   });
+    //   const reviewData = await Review.findByPk(req.params.user_id, {
+    //     include: [
+    //       {
+    //         model: User, Profile,
+    //         attributes: ["username"],
+    //       },
+    //     ],
+    //   });
 
-  //   const review = reviewData.get({ plain: true });
-    
-  //   res.render('review', { // rendering/sending all content(if any) to the dashboard page.
-  //     ...review,
-  //     logged_in: true
-  //   });
-  // } catch (err) {
-  //   res.status(500).json(err);
-  //   console.log(err)
-  res.render("review", {
-    // profiles,
-    logged_in: req.session.logged_in,
-  });
-} catch (err) {
-  console.log(err)
-  res.status(500).json(err);
-}
+    //   const review = reviewData.get({ plain: true });
+
+    //   res.render('review', { // rendering/sending all content(if any) to the dashboard page.
+    //     ...review,
+    //     logged_in: true
+    //   });
+    // } catch (err) {
+    //   res.status(500).json(err);
+    //   console.log(err)
+    res.render("review", {
+      // profiles,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
   // }
 });
 
