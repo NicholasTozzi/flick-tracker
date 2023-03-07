@@ -59,8 +59,7 @@ const search = async (event) => {
     const data = await response.json();
     console.log(data);
     if (response.ok) {
-      // document.location.replace("/profile");
-      alert("Movie Searched");
+      document.location.replace("/profile");
     } else {
       alert("Failed to search movie!");
     }
