@@ -1,0 +1,529 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(33, 32, 32, 0.992);
+}
+
+nav {
+	background-color: rgba(33, 32, 32, 0.992);
+	overflow: hidden;
+	padding: 1em;
+	border-bottom: 2px solid #c10206;
+    /* margin-bottom: 20%; */
+}
+
+nav	a {
+		color: #c10206;
+        font-weight: bolder;
+}
+
+nav a:hover {
+    background: #C10206;
+    color: #fff;
+    border-radius: 5px;
+     box-shadow: 0 0 5px #C10206,
+                0 0 25px #C10206,
+                0 0 50px #C10206,
+                0 0 100px #C10206; 
+  }
+
+nav .navWide {
+	display: none;
+	/* margin: 0 auto; */
+}
+
+nav .navWide .wideDiv {
+	text-align: center;
+}
+
+nav .navWide .wideDiv a {
+	text-decoration: none;
+	display: inline-block;
+	/*Adjust padding to increase/decrease the space between links.*/
+	padding: 0 2em;
+}
+
+img {
+    max-width: 10vw;
+    max-height: 10vh;
+}
+
+.bg {
+    position: fixed; 
+    top: 10; 
+    left: 0; 
+      
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  .corners {
+    border: 1px solid #C10206;
+    background-color: rgba(33, 32, 32, 0.992);
+    border-radius: 0 0 25px 25px;
+  }
+
+.head-col {
+    color: #C10206;
+    background-color: rgba(33, 32, 32, 0.992);
+    border: 2px solid #C10206;
+    box-shadow: 0 0 5px #C10206,
+                0 0 10px #C10206;
+}
+
+.body-div {
+    background-color: rgba(33, 32, 32, 0.992);
+    border: 2px solid #C10206;
+    color: #c10206;
+    box-shadow: white;
+}
+
+.body-div:hover {
+    background-color: #C10206;
+    color: white;
+    border: 1px solid #C10206;
+    box-shadow: 0 0 5px white,
+                0 0 10px white,
+                0 0 15px #C10206,
+                0 0 20px #C10206,
+                0 0 25px #C10206;
+}
+
+.content-div {
+    background-color: rgba(33, 32, 32, 0.992);
+    border: 1px solid #c10206;
+    color: white;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 0 5px #C10206,
+    0 0 10px #C10206;
+}
+
+.size-div-left {
+    padding-left: 20vw;
+}
+
+.size-div-right {
+    padding-right: 20vw;
+}
+
+.size {
+    margin-top: 18vh;
+}
+.login-box-1 {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    border: 1px solid #C10206;
+  }
+
+  .login-box-2 {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    border: 1px solid #C10206;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #C10206;
+    font-size: 12px;
+  }
+  
+  .login-box form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #C10206;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .login-box button:hover {
+    background: #C10206;
+    color: #fff;
+    border-radius: 5px;
+     box-shadow: 0 0 5px #C10206,
+                0 0 25px #C10206,
+                0 0 50px #C10206,
+                0 0 100px #C10206; 
+  }
+  
+  .login-box button span {
+    position: absolute;
+    display: block;
+  }
+  
+  .login-box button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C10206);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .login-box button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #C10206);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .login-box button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #C10206);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .login-box button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #C10206);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+
+  .login-btn {
+    background-color: rgba(0,0,0,.6);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border: none;
+  }
+
+  /* Community */
+
+
+  .saveToWatchlist {
+    background: linear-gradient(270deg, transparent, #C10206);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s;
+    border-color: #211D21;
+    color:#dfe2db;
+    
+  }
+  
+  .alreadyWatched {
+    background: linear-gradient(270deg, transparent, #C10206);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s;
+    border-color: #211D21;
+    color:#dfe2db;
+    
+  }
+  
+   
+    .communityBody {
+      background-image: url('https://media.istockphoto.com/id/1286371622/photo/abstract-red-and-black-are-light-pattern-with-the-gradient-is-the-with-floor-wall-metal.jpg?b=1&s=170667a&w=0&k=20&c=RDAl7ILbKJESFDPeKnahjdPz4ElZa67VMJghhHIHwJE=');
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fffbf2;
+      border-color: #211D21;
+      border: solid;
+      
+    }
+  
+    
+   
+    .community {
+    margin-top: 2%;
+    -webkit-text-stroke: 2px #C10206;
+    text-align: center;
+    font-size: 100px;
+    color: rgba(33, 32, 32, 0.992);
+  
+      }
+
+    .profileHeader {
+      margin-top: 2%;
+    -webkit-text-stroke: 2px #C10206;
+    text-align: center;
+    font-size: 100px;
+    color: rgba(33, 32, 32, 0.992);
+    }
+  
+  
+    
+   
+    
+  
+     /* Reviews */
+   .reviewpg {
+    background-color: #211D21;
+  }
+
+ /*  .movie-box {
+    padding: 40px;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+    margin: auto;
+  }
+
+  .addrev-btn {
+    color: #C10206;
+    letter-spacing: normal;
+    font-size: medium;
+    padding: 10px 15px;
+  } */
+
+
+  /* changed/added below */
+  .rev-box-container {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .rev-box {
+    width: 300px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+    padding: 20px;
+    margin: 15px;
+  }
+  .box-title {
+    color: #C10206;
+    font: bold;
+  }
+.revpg-box-text {
+  font-size: 0.9rem;
+  color: #fff;
+}
+/* changed/added ^ */
+
+
+  .watchlist-box {
+    padding: 40px;
+    margin: auto;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+  }
+
+  .recently-watched {
+    padding: 40px;
+    margin: auto;
+    height:fit-content;
+    width: fit-content;
+    background-color: #010a10;
+    border-color: #C10206;
+    border-radius: 1px;
+  }
+
+  @media (max-width: 610px) {
+    nav .navWide {
+		display: block;
+	}
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .size {
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .bg {
+        display: none;
+    }
+    .corners {
+        background-color: rgba(0,0,0,.5);
+      }
+    
+    .head-col {
+        background-color: rgba(0, 0, 0, .5);
+    }
+    
+    .body-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .content-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .size {
+        margin-top: 2vh;
+    }
+}
+
+@media (max-width: 1160px) {
+	.size {
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .bg {
+        display: none;
+    }
+    .corners {
+        background-color: rgba(0,0,0,.5);
+      }
+    
+    .head-col {
+        background-color: rgba(0,0,0,.5);
+    }
+    
+    .body-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .content-div {
+        background-color: rgba(0,0,0,.5);
+    }
+    .size {
+        margin-top: 2vh;
+    }
+}
+
+
+@media (min-width: 480px) {
+	
+	nav .navWide {
+		display: block;
+	}
+}
+
+@media (max-width: 1052px) {
+  .login-box-1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 40px;
+    margin-top: 10vh;
+  }
+
+  .login-box-2 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    padding: 40px;
+    margin-top: 30vh;
+  }
+  
+}
+
+@media (max-width: 1295px) {
+  .login-box-1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    margin-top: 10vh;
+  }
+
+  .login-box-2 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    margin-top: 30vh;
+  }
+  
+}
