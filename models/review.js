@@ -23,6 +23,13 @@ Review.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    // user_username: {
+    //   type: DataTypes.STRING,
+    //   references: {
+    //     model: "user",
+    //     key: "username",
+    //   },
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

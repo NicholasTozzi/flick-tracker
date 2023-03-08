@@ -21,6 +21,10 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3006;
 
+const hbs = exphbs.create({
+  helpers: helpers
+});
+
 //Creating a cookie session
 // app.use(cookieSession({
 //   name: 'session',
@@ -50,7 +54,7 @@ const sess = {
 app.use(session(sess));
 
 //handlebars and helpers
-const hbs = exphbs.create({}); // here maybe??
+// const hbs = exphbs.create({}); // here maybe??
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 

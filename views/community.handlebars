@@ -8,10 +8,10 @@
       <h4 style="text-align:left;">
         {{review.name}}
         <span style="float:right;">
-           {{!-- {{format_date date_created}}  --}}
+           {{format_date date_created}}
         </span>
       </h4>
-      <p class="card-text hey">{{review.content}} - {{review.user_id}}</p>
+      <p class="card-text hey">{{review.content}} - {{user.username}}</p>
       <div class="btn-group jesse" role="group" aria-label="Basic outlined example">
         <button type="button" class="btn btn-outline-primary saveToWatchlist">Save To Watchlist</button>
         <button type="button" class="btn btn-outline-primary alreadyWatched">Already Watched</button>
