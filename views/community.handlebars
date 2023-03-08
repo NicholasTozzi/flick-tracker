@@ -3,12 +3,12 @@
 </div>
 <div class="bulks">
   <div class="card text-center 12 shrek">
-    {{#each review as |review|}}
+    {{#each allReviews as |review|}}
     <div class="card-body communityBody">
       <h4 style="text-align:left;">
         {{review.name}}
         <span style="float:right;">
-          {{format_date date_created}}
+           {{!-- {{format_date date_created}}  --}}
         </span>
       </h4>
       <p class="card-text hey">{{review.content}} - {{review.user_id}}</p>

@@ -57,22 +57,45 @@ router.get("/", async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get("/community", async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-      include: [{ model: Profile, Review }],
+    const reviewData = await Review.findAll({ // getting all of the blogs and users(ref model)
+      include: [
+        {
+          model: User
+        },
+      ],
     });
 
-    const user = userData.get({ plain: true });
-
-    res.render("community", {
-      ...user,
-      logged_in: true,
+    const allReviews = reviewData.map((y) => y.get({ plain: true }));
+    res.render('community', { // telling all off the cur blogs(if any) to render/show up on the homepage
+      allReviews,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
+
+// router.get("/community", async (req, res) => {
+//   try {
+//     const userData = await User.findByPk(req.session.user_id, {
+//       // using session id, to get the currently logged in user, to display THEIR blogs.
+//       attributes: { exclude: ["password"] }, // excluding the password so nobody can see it.
+//       include: [{ model: Review }],
+//     });
+
+//     const user = userData.get({ plain: true });
+
+//     res.render("community", {
+//       // rendering/sending all content(if any) to the dashboard page.
+//       ...user,
+//       logged_in: true,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//     console.log(err);
+//   }
+// });
 
 router.get("/profile/:id", async (req, res) => {
   try {
