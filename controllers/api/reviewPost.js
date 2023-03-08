@@ -4,6 +4,20 @@ const { Review } = require("../../models"); //getting Review from review model
 const userAuth = require("../../utils/auth");
 const axios = require("axios");
 //wow
+router.post("/", userAuth, async (req, res) => {
+    try {
+      const newReview = Review.create({
+        ...req.body,
+        user_id: req.session.user_id,
+      });
+  
+      res.status(200).json(newReview);
+    } catch (err) {
+      res.status(400).json(err);
+      console.log(err);
+    }
+  });
+
 router.post("/movie", (req, res) => {
   const options = {
     method: "GET",
@@ -26,42 +40,28 @@ router.post("/movie", (req, res) => {
     });
 });
 
-router.get("/community", async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.session.user_id, {
-      // using session id, to get the currently logged in user, to display THEIR blogs.
-      attributes: { exclude: ["password"] }, // excluding the password so nobody can see it.
-      include: [{ model: Review }],
-    });
+// router.get("/community", async (req, res) => {
+//   try {
+//     const userData = await User.findByPk(req.session.user_id, {
+//       // using session id, to get the currently logged in user, to display THEIR blogs.
+//       attributes: { exclude: ["password"] }, // excluding the password so nobody can see it.
+//       include: [{ model: Review }],
+//     });
 
-    const user = userData.get({ plain: true });
+//     const user = userData.get({ plain: true });
 
-    res.render("community", {
-      // rendering/sending all content(if any) to the dashboard page.
-      ...user,
-      logged_in: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-    console.log(err);
-  }
-});
+//     res.render("community", {
+//       // rendering/sending all content(if any) to the dashboard page.
+//       ...user,
+//       logged_in: true,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//     console.log(err);
+//   }
+// });
 
 // axios.post("/search", (req, res) => {});
 
-router.post("/", userAuth, async (req, res) => {
-  try {
-    const newReview = await Review.create({
-      review_movie: req.body.movieTitle,
-      review_content: req.body.reviewContent,
-      review_creator: req.session.user_id,
-    });
-
-    res.status(200).json(newReview);
-  } catch (err) {
-    res.status(400).json(err);
-    console.log(err);
-  }
-});
 
 module.exports = router;

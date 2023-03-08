@@ -1,26 +1,30 @@
 const newReviewSubmit = async (event) => {
   event.preventDefault();
 
-  const reviewTitle = document.querySelector("#review-title").value.trim();
-  const reviewContent = document.querySelector("#review-content").value.trim();
+  const name = document.querySelector('#review-name').value.trim();
+  const content = document.querySelector('#review-content').value.trim();
 
-  if (reviewTitle && reviewContent) {
-    const response = await fetch("/api/review", {
-      method: "POST",
-      body: JSON.stringify({ reviewTitle, reviewContent }),
+  if (name && content) {
+    const response = await fetch(`/api/review`, {
+      method: 'POST',
+      body: JSON.stringify({ name, content }),
       headers: {
         "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("/community");
       alert("Review Created");
     } else {
       alert("Failed to create review");
     }
   }
 };
+
+document
+  .querySelector('.new-review')
+  .addEventListener('submit', newReviewSubmit);
 
 //   const postMovie = async event => {
 //      event.preventDefault();
@@ -88,9 +92,6 @@ const search = async (event) => {
 //         });
 //         };
 
-document
-  .querySelector(".new-review")
-  .addEventListener("submit", newReviewSubmit);
 
 document.querySelector("#new-movie").addEventListener("click", search);
 // document
