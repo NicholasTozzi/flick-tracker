@@ -9,27 +9,41 @@
   </style>
   <a href="/review">Search Movie</a>
 </div>
-<div class="profileBody">
-  {{#if profile.top5.length}}
-  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center yop">
-    <div class="col hey">
-      <div class="blank">
-        <div class="card-header py-3 dv">
+
+
+
+  
+
+<div class="all">
+    <div class="col profileBoxes">
+      {{#if profile.top5.length}}
+      
+      <div class="blank2">
+        <div class="card-header py-3 cf">
         </div>
         {{#each profile as |profile|}}
-        <div class="card-body hod">
+        <div class="card-body shrek">
           <h4 class="my-0 fw-normal co">&#10026;Top 5&#10026;</h4>
-          <ul class="list-unstyled mt-3 mb-4 cd">
+          <ul class="list-unstyled mt-3 mb-4">
             <p>{{profile.top5}}</p>
+          </ul>
+        </div>
+        {{/each}}
+        {{else}}
+        <div class="card-body shrek">
+          <h4 class="my-0 fw-normal co">&#10026;Top 5&#10026;</h4>
+          <ul class="list-unstyled mt-3 mb-4">
+            <p>Nothing To See Yet!</p>
           </ul>
         </div>
       </div>
     </div>
-    {{/each}}
     {{/if}}
+  </div>
 
 
-    <div class="col hey">
+    <div class="all">
+    <div class="col profileBoxes">
       {{#if profile.watched.length}}
       <div class="blank2">
         <div class="card-header py-3 cf">
@@ -41,12 +55,21 @@
             <p>{{profile.watched}}</p>
           </ul>
         </div>
+        {{/each}}
+        {{else}}
+        <div class="card-body shrek">
+          <h4 class="my-0 fw-normal co">&#10026;Recently Watched&#10026;</h4>
+          <ul class="list-unstyled mt-3 mb-4">
+            <p>Nothing To See Yet!</p>
+          </ul>
+        </div>
       </div>
     </div>
-    {{/each}}
     {{/if}}
+  </div>
 
-    <div class="col hey">
+  <div class="all">
+    <div class="col profileBoxes">
       {{#if profile.genre.length}}
       <div class="card-header py-3 fiona">
       </div>
@@ -54,23 +77,37 @@
       <div class="card-body hi">
         <h4 class="my-0 fw-normal shrek">&#10026;Most Watched Genres&#10026;</h4>
         <p>{{profile.genre}}</p>
-        <ul class="list-unstyled mt-3 mb-4 donkey">
+       </div>
+      {{/each}}
+      {{else}}
+        <div class="card-header py-3 fiona">
+        </div>
+     <div class="card-body hi">
+        <h4 class="my-0 fw-normal shrek">&#10026;Most Watched Genres&#10026;</h4>
+        <p>Nothing To See Yet!</p>   
       </div>
+      {{/if}}
     </div>
-  </div>
-  {{/each}}
-  {{/if}}
+    </div>
 
-  <div class="card5 reviewBody">
+  <div class="all">
+  <div class="col profileBoxes">
     {{#if profile.content.length}}
+    {{#each profile as |profile|}}
     <div class="card-body partTwo">
-      {{#each profile as |profile|}}
       <h5 class="card-title sup">&#10026;Reviews&#10026;</h5>
         <p>{{profile.content}}</p>
-        <script src="./javascript/watch.js"></script>
-          </div>
-        </div>
-       </div>
+          <script src="./javascript/watch.js"></script>
     </div>
-      {{/each}}
+    {{/each}}
+    {{else}}
+       <div class="card-body partTwo">
+        <h5 class="card-title sup">&#10026;Reviews&#10026;</h5>
+          <p>Nothing To See Yet!</p>
+            <script src="./javascript/watch.js"></script>
+        </div>
+    </div>
+      
       {{/if}}
+</div>
+     

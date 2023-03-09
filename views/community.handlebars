@@ -5,7 +5,8 @@
   <div class="card text-center 12 shrek">
     {{#each allReviews as |review|}}
     <div class="card-body communityBody">
-      <h4 style="text-align:left;">
+      {{!-- <h4 style="text-align:left;"> --}}
+      <h4>
         {{review.name}}
         <span style="float:right;">
            {{!-- {{format_date date_created}}  --}}
@@ -17,6 +18,6 @@
         <button type="button" class="btn btn-outline-primary alreadyWatched">Already Watched</button>
       </div>
     </div>
-  </div>
   {{/each}}
+  </div>
 </div>
