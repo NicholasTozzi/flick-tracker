@@ -17,11 +17,16 @@ Profile.hasMany(Review, {
 Profile.belongsTo(User, {
   foreignKey: "user_id",
 });
-Review.belongsTo(User, {
-  foreignKey: "user_id",
-});
 Review.belongsTo(Profile, {
   foreignKey: "profile_id",
+});
+
+User.hasMany(Review, {
+  foreignKey: "user_id",
+  onDelete: 'CASCADE'
+})
+Review.belongsTo(User, {
+  foreignKey: "user_id",
 });
 
 //exports

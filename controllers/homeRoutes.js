@@ -125,12 +125,12 @@ router.get("/profile", withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       // using session id, to get the currently logged in user, to display THEIR blogs.
       attributes: { exclude: ["password"] }, // excluding the password so nobody can see it.
-      include: [{ model: Profile, Review }],
+      include: [{ model: Review, Profile }],
     });
 
     const user = userData.get({ plain: true });
 
-    res.render("profile", {
+    res.render('profile', {
       // rendering/sending all content(if any) to the dashboard page.
       ...user,
       logged_in: true,
