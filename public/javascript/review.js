@@ -1,12 +1,12 @@
 const newReviewSubmit = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#review-name').value.trim();
-  const content = document.querySelector('#review-content').value.trim();
+  const name = document.querySelector("#review-name").value.trim();
+  const content = document.querySelector("#review-content").value.trim();
 
   if (name && content) {
     const response = await fetch(`/api/review`, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({ name, content }),
       headers: {
         "Content-Type": "application/json",
@@ -23,8 +23,8 @@ const newReviewSubmit = async (event) => {
 };
 
 document
-  .querySelector('.new-review')
-  .addEventListener('submit', newReviewSubmit);
+  .querySelector(".new-review")
+  .addEventListener("submit", newReviewSubmit);
 
 //   const postMovie = async event => {
 //      event.preventDefault();
@@ -61,9 +61,20 @@ const search = async (event) => {
       },
     });
     const data = await response.json();
-    console.log(data);
     if (response.ok) {
-      console.log(movieTitle);
+      console.log(movieTitle); // query selector
+      console.log(data); //full array
+      console.log(data[0]); //individual movie
+
+for (let i=0; i < data.length; i++) {
+      const mTitle = data[i].l;
+      const mActors = data[i].s;
+      const mRelease = data[i].y;
+
+      console.log(mTitle); // prints movie name
+      console.log(mActors); // prints actors name
+      console.log(mRelease); // prints release year
+};
       //  document.location.replace("/profile");
     } else {
       alert("Failed to search movie!");
@@ -91,7 +102,6 @@ const search = async (event) => {
 //         console.error(error);
 //         });
 //         };
-
 
 document.querySelector("#new-movie").addEventListener("click", search);
 // document
