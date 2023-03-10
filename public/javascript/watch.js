@@ -6,6 +6,8 @@ const alreadyWatchedHandler = async (event) => {
 
     const watchedM = document.querySelector("#already-watched").value.trim();
 
+    
+
     if (watchedM) {
         const response = await fetch('/api/watch', {
             method: 'POST',

@@ -97,29 +97,48 @@ router.get("/community", async (req, res) => {
 //   }
 // });
 
-router.get("/profile/:id", async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
   try {
-    const profileData = await Profile.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
+    const userData = await User.findByPk(req.session.user_id, { // using session id, to get the currently logged in user, to display THEIR blogs.
+      attributes: { exclude: ['password'] }, // excluding the password so nobody can see it.
+      include: [{ model: Review , Profile }],
     });
 
-    const profile = profileData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
-    res.render("profile", {
-      ...profile,
-      logged_in: req.session.logged_in,
+    res.render('profile', { // rendering/sending all content(if any) to the profile page.
+      ...user,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log(err)
   }
 });
 
-// The dashboard page, getting users data based off their login info.
+// router.get("/profile", withAuth, async (req, res) => {
+//   try {
+//     const profileData = await Profile.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ["username"],
+//         },
+//       ],
+//     });
+
+//     const profile = profileData.get({ plain: true });
+
+//     res.render("profile", {
+//       ...profile,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// The profile page, getting users data based off their login info.
 router.get("/profile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
