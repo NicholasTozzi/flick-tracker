@@ -90,9 +90,9 @@
     </div>
     </div>
 
-  <div class="all">
-  <div class="col profileBoxes">
-    {{#if profile.content.length}}
+  {{!-- <div class="all">
+  <div class="col profileBoxes"> --}}
+    {{!-- {{#if profile.content.length}}
     {{#each profile as |profile|}}
     <div class="card-body partTwo">
       <h5 class="card-title sup">&#10026;Reviews&#10026;</h5>
@@ -108,6 +108,29 @@
         </div>
     </div>
       
-      {{/if}}
+      {{/if}} --}}
+        <div class="all">
+  <div class="col profileBoxes">
+      <h5 class="card-title sup">&#10026;Reviews&#10026;</h5>
+      {{#if reviews.length}}
+      <div class="new-blog">
+    {{#each reviews as |review|}}
+        <div class="card-body partTwo">
+            <div class="user-clog-content">
+                <h3>{{review.name}}</h3>
+                {{!-- <p>Created by {{username}} on {{format_date date_created}}</p> --}}
+                <p>{{review.content}}</p>
+            </div>
+        </div>
+        {{/each}}
+        </div>
+        {{else}}
+       <div class="card-body partTwo">
+          <p>Nothing To See Yet!</p>
+        </div>
+    {{/if}}
 </div>
+
+<script src="./javascript/watch.js"></script>
+
      
