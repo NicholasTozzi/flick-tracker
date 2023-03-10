@@ -139,26 +139,26 @@ router.get('/profile', withAuth, async (req, res) => {
 // });
 
 // The profile page, getting users data based off their login info.
-router.get("/profile", withAuth, async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.session.user_id, {
-      // using session id, to get the currently logged in user, to display THEIR blogs.
-      attributes: { exclude: ["password"] }, // excluding the password so nobody can see it.
-      include: [{ model: Review, Profile }],
-    });
+// router.get("/profile", withAuth, async (req, res) => {
+//   try {
+//     const userData = await User.findByPk(req.session.user_id, {
+//       // using session id, to get the currently logged in user, to display THEIR blogs.
+//       attributes: { exclude: ["password"] }, // excluding the password so nobody can see it.
+//       include: [{ model: Review, Profile }],
+//     });
 
-    const user = userData.get({ plain: true });
+//     const user = userData.get({ plain: true });
 
-    res.render('profile', {
-      // rendering/sending all content(if any) to the dashboard page.
-      ...user,
-      logged_in: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-    console.log(err);
-  }
-});
+//     res.render('profile', {
+//       // rendering/sending all content(if any) to the dashboard page.
+//       ...user,
+//       logged_in: true,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//     console.log(err);
+//   }
+// });
 
 router.get('/review', async (req, res) => {
   try {
