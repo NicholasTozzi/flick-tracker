@@ -1,5 +1,5 @@
 <div class="header profileHeader">
-  <h1>Your Flick Tracker</h1>
+  <h1>Your Flick Tracker {{username}}</h1>
 </div>
 <div class="searchMovieLink">
   <style>
@@ -16,7 +16,7 @@
 
 <div class="all">
     <div class="col profileBoxes">
-      {{#if profile.top5.length}}
+      {{#if top5.length}}
       
       <div class="blank2">
         <div class="card-header py-3 cf">

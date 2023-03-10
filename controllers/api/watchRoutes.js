@@ -1,6 +1,36 @@
 const router = require("express").Router();
 const { Profile } = require('../../models');
 
+// router.get('/profile:id', async (req, res) => {
+//   try {
+//     const watched = await Profile.findByPk(req.params.id);
+//   }catch (err) {
+//     return res.status(404).json(err)
+//   }
+// });
+
+// router.get("/profile/:id", async (req, res) => {
+//   try {
+//     const profileData = await Profile.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ["username"],
+//         },
+//       ],
+//     });
+
+//     const profile = profileData.get({ plain: true });
+
+//     res.render("profile", {
+//       ...profile,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 router.post('/', async (req, res) => {
     try {
         const watched = await Profile.create(req.body)
