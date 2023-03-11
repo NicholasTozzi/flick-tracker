@@ -66,15 +66,17 @@ const search = async (event) => {
       console.log(data); //full array
       console.log(data[0]); //individual movie
 
-for (let i=0; i < data.length; i++) {
-      const mTitle = data[i].l;
-      const mActors = data[i].s;
-      const mRelease = data[i].y;
+      for (let i = 0; i < data.length; i++) {
+        const mTitle = data[i].l;
+        const mActors = data[i].s;
+        const mRelease = data[i].y;
+        const mPoster = data[i].i.imageUrl;
 
-      console.log(mTitle); // prints movie name
-      console.log(mActors); // prints actors name
-      console.log(mRelease); // prints release year
-};
+        console.log(mTitle); // prints movie name
+        console.log(mActors); // prints actors name
+        console.log(mRelease); // prints release year
+        console.log(mPoster); // prints image link
+      }
       //  document.location.replace("/profile");
     } else {
       alert("Failed to search movie!");
