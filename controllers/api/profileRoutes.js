@@ -85,6 +85,23 @@ router.post("/id", async (req, res) => {
   }
 });
 
+// router.post("/", withAuth, async (req, res) => {
+//   try {
+//     const profileData = await Profile.create({
+//       watched: req.body.watched,
+//       watchlist: req.body.watchlist,
+//       top5: req.body.top5,
+//       genre: req.body.genre,
+//       followingActors: req.body.followingActors,
+//       followingUsers: req.body.followingUsers,
+//     });
+//     res.status(200).json(profileData);
+//   } catch (err) {
+//     res.status(400).json(err);
+//     console.log(err)
+//   }
+// });
+
 router.delete("/:id", async (req, res) => {
   // delete a profile by its `id` value
   try {

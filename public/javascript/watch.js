@@ -5,14 +5,16 @@
 const alreadyWatchedHandler = async (event) => {
   event.preventDefault();
 
-  const watchedM = document.querySelector("#already-watched").value.trim();
+    const watched = document.querySelector("#already-watched").value.trim();
 
-  if (watchedM) {
-    const response = await fetch("/api/watch", {
-      method: "POST",
-      body: JSON.stringify({ watchedM }),
-      headers: { "Content-Type": "application/json" },
-    });
+    
+
+    if (watched) {
+        const response = await fetch('/api/watch', {
+            method: 'POST',
+            body: JSON.stringify({watched}),
+            headers: { 'Content-Type': 'application/json' },
+        });
 
     if (response.ok) {
       document.location.replace("/profile");
@@ -26,14 +28,15 @@ const alreadyWatchedHandler = async (event) => {
 const addToWatchlistHandler = async (event) => {
   event.preventDefault();
 
-  const addedToList = document.querySelector("#watch-later").value.trim();
+    const watchList = document.querySelector("#watch-later").value.trim();
 
-  if (addedToList) {
-    const response = await fetch("/api/watch/later", {
-      method: "POST",
-      body: JSON.stringify({ addedToList }),
-      headers: { "Content-Type": "application/json" },
-    });
+    if (addedToList) {
+        const response = await fetch ('/api/watch/later', {
+            method: 'POST',
+            body: JSON.stringify({watchList}),
+            headers: {'Content-Type': 'application/json'},
+
+        });
 
     if (response.ok) {
       document.location.replace("/profile");
