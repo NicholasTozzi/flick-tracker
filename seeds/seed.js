@@ -6,7 +6,7 @@ const ProfileData = require("./profileData.json");
 const ReviewData = require("./reviewData.json");
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: false });
 
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
@@ -27,6 +27,6 @@ const seedDatabase = async () => {
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
-  process.exit(0); 
+  process.exit(0);
 };
 seedDatabase();

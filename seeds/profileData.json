@@ -31,6 +31,77 @@
       "2": "Jack",
       "3": "Nick"
     },
-    "genre": ""
+    "genre": "horror"
+ 
+  },
+  {
+    "watched": {
+      "1": "Shrek",
+      "2": "Shrek 2",
+      "3": "Shrek 3",
+      "4": "Squid Games",
+      "5": "Sharknado"
+    },
+    "watchlist": {
+      "1": "Momento",
+      "2": "Freaky Friday",
+      "3": "Home Alone",
+      "4": "The Simpsons Movie",
+      "5": "Sharknado 2"
+    },
+    "top5": {
+      "1": "movie1",
+      "2": "movie2",
+      "3": "movie3",
+      "4": "movie4",
+      "5": "movie5"
+    },
+    "followingActors": {
+      "1": "Jenna Ortega",
+      "2": "Jack Black",
+      "3": "Billy Ray Cyrus"
+    },
+    "followingUsers": {
+      "1": "Jenna",
+      "2": "Jack",
+      "3": "Nick"
+    },
+    "genre": "horror"
+
+  },
+  {
+    "watched": {
+      "1": "Shrek",
+      "2": "Shrek 2",
+      "3": "Shrek 3",
+      "4": "Squid Games",
+      "5": "Sharknado"
+    },
+    "watchlist": {
+      "1": "Momento",
+      "2": "Freaky Friday",
+      "3": "Home Alone",
+      "4": "The Simpsons Movie",
+      "5": "Sharknado 2"
+    },
+    "top5": {
+      "1": "movie1",
+      "2": "movie2",
+      "3": "movie3",
+      "4": "movie4",
+      "5": "movie5"
+    },
+    "followingActors": {
+      "1": "Jenna Ortega",
+      "2": "Jack Black",
+      "3": "Billy Ray Cyrus"
+    },
+    "followingUsers": {
+      "1": "Jenna",
+      "2": "Jack",
+      "3": "Nick"
+    },
+    "genre": "horror"
+   
   }
 ]
