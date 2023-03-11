@@ -42,8 +42,8 @@ router.post('/', async (req, res) => {
 
 router.post('/later', async (req, res) => {
     try {
-        const watchLater = await Profile.create(req.body)
-        res.status(200).json(watchLater)
+        const watchList = await Profile.create(req.body)
+        res.status(200).json(watchList)
     } catch (err) { 
       res.status(400).json(err)
     }

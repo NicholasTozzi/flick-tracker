@@ -4,14 +4,14 @@
 const alreadyWatchedHandler = async (event) => {
     event.preventDefault();
 
-    const watchedM = document.querySelector("#already-watched").value.trim();
+    const watched = document.querySelector("#already-watched").value.trim();
 
     
 
-    if (watchedM) {
+    if (watched) {
         const response = await fetch('/api/watch', {
             method: 'POST',
-            body: JSON.stringify({watchedM}),
+            body: JSON.stringify({watched}),
             headers: { 'Content-Type': 'application/json' },
         });
 
@@ -27,12 +27,12 @@ const alreadyWatchedHandler = async (event) => {
 const addToWatchlistHandler = async (event) => {
     event.preventDefault();
 
-    const addedToList = document.querySelector("#watch-later").value.trim();
+    const watchList = document.querySelector("#watch-later").value.trim();
 
     if (addedToList) {
         const response = await fetch ('/api/watch/later', {
             method: 'POST',
-            body: JSON.stringify({addedToList}),
+            body: JSON.stringify({watchList}),
             headers: {'Content-Type': 'application/json'},
 
         });
