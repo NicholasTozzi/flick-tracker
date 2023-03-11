@@ -23,17 +23,18 @@ const alreadyWatchedHandler = async (event) => {
       alert("Failed to save watched movie!");
     }
   }
+  console.log(watched);
 };
 
 const addToWatchlistHandler = async (event) => {
   event.preventDefault();
 
-    const watchList = document.querySelector("#watch-later").value.trim();
+    const watchlist = document.querySelector("#watch-later").value.trim();
 
     if (addedToList) {
         const response = await fetch ('/api/watch/later', {
             method: 'POST',
-            body: JSON.stringify({watchList}),
+            body: JSON.stringify({watchlist}),
             headers: {'Content-Type': 'application/json'},
 
         });
@@ -45,6 +46,7 @@ const addToWatchlistHandler = async (event) => {
       alert("Failed to Save to Watchlist!");
     }
   }
+  console.log(watchlist);
 };
 
 document
