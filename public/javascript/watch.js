@@ -49,10 +49,10 @@ const addToWatchlistHandler = async (event) => {
   console.log(watchlist);
 };
 
-document
-  .querySelector("watched-already")
-  .addEventListener("submit", alreadyWatchedHandler);
+// document
+//   .querySelector("watched-already")
+//   .addEventListener("submit", alreadyWatchedHandler);
 
-document
-  .querySelector("addTo-watchLater")
-  .addEventListener("submit", addToWatchlistHandler);
+// document
+//   .querySelector("addTo-watchLater")
+//   .addEventListener("submit", addToWatchlistHandler);

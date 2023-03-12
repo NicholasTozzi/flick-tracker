@@ -10,26 +10,7 @@
   <a href="/review">Search Movie</a>
 </div>
 
-  <div class="col profileBoxes">
-      <h5 class="card-title sup">&#10026;Reviews&#10026;</h5>
-      {{#if reviews.length}}
-      <div class="new-blog">
-    {{#each reviews as |review|}}
-        <div class="card-body partTwo">
-            <div class="user-clog-content">
-                <h3>{{review.name}}</h3>
-                {{!-- <p>Created by {{username}} on {{format_date date_created}}</p> --}}
-                <p>{{review.content}}</p>
-            </div>
-        </div>
-        {{/each}}
-        </div>
-        {{else}}
-       <div class="card-body partTwo">
-          <p>Nothing To See Yet!</p>
-        </div>
-    {{/if}}
-</div>
+
 
   
 
@@ -60,22 +41,64 @@
     {{/if}}
   </div> --}}
 
-{{!-- 
+
     <div class="all">
     <div class="col profileBoxes">
       {{#if profiles.length}}
+      
       <div class="blank2">
         <div class="card-header py-3 cf">
         </div>
         {{#each profiles as |profile|}}
+        <div class="card-body shrek">
+          <h4 class="my-0 fw-normal co">&#10026;Top 5&#10026;</h4>
+          <ul class="list-unstyled mt-3 mb-4">
+            <p>{{profile.top5}}</p>
+          </ul>
+        </div>
+        {{/each}}
+        {{else}}
+        <div class="card-body shrek">
+          <h4 class="my-0 fw-normal co">&#10026;Top 5&#10026;</h4>
+          <ul class="list-unstyled mt-3 mb-4">
+            <p>Nothing To See Yet!</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+  </div> --}}
+      {{!-- <div class="all">
+    <div class="col profileBoxes">
+      <div class="blank2">
+        <div class="card-header py-3 cf">
+        </div>
         <div class="card-body shrek">
           <h4 class="my-0 fw-normal co">&#10026;Recently Watched&#10026;</h4>
           <ul class="list-unstyled mt-3 mb-4">
             <p>{{profile.watched}}</p>
           </ul>
         </div>
-        {{/each}}
-        {{else}}
+      </div>
+    </div>
+  </div> --}}
+
+
+    {{!-- <div class="all">
+    <div class="col profileBoxes">
+      {{#if profile.length}}
+      <div class="blank2">
+        <div class="card-header py-3 cf">
+        </div>
+        {{!-- {{#each profiles as |profile|}} --}}
+        {{!-- <div class="card-body shrek">
+          <h4 class="my-0 fw-normal co">&#10026;Recently Watched&#10026;</h4>
+          <ul class="list-unstyled mt-3 mb-4">
+            <p>{{watched}}</p>
+          </ul>
+        </div>
+        {{!-- {{/each}} --}}
+        {{!-- {{else}}
         <div class="card-body shrek">
           <h4 class="my-0 fw-normal co">&#10026;Recently Watched&#10026;</h4>
           <ul class="list-unstyled mt-3 mb-4">
@@ -85,9 +108,9 @@
       </div>
     </div>
     {{/if}}
-  </div>
+   --}}
 
-  <div class="all">
+  {{!-- <div class="all">
     <div class="col profileBoxes">
       {{#if profiles.length}}
       <div class="card-header py-3 fiona">
@@ -128,7 +151,27 @@
     </div>
       
       {{/if}} --}}
-
+        <div class="all">
+  <div class="col profileBoxes">
+      <h5 class="card-title sup">&#10026;Reviews&#10026;</h5>
+      {{#if reviews.length}}
+      <div class="new-blog">
+    {{#each reviews as |review|}}
+        <div class="card-body partTwo">
+            <div class="user-clog-content">
+                <h3>{{review.name}}</h3>
+                {{!-- <p>Created by {{username}} on {{format_date date_created}}</p> --}}
+                <p>{{review.content}}</p>
+            </div>
+        </div>
+        {{/each}}
+        </div>
+        {{else}}
+       <div class="card-body partTwo">
+          <p>Nothing To See Yet!</p>
+        </div>
+    {{/if}}
+</div>
 {{!-- 
 <script src="./javascript/watch.js"></script> --}}
 

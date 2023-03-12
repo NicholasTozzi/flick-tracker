@@ -369,6 +369,14 @@ img {
   
 
    /* Reviews */
+.label-color {
+  color: #fff;
+}
+
+.review-box-m {
+ margin-top: 10%;
+}
+
  .reviewpg {
   background-color: #211D21;
 }
