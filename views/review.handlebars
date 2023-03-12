@@ -9,36 +9,36 @@
               <input id="movie-title" name="movie-title" />
               <button id="new-movie">Search Movie</button>
             </div>
-            {{!-- <div class="row g-0">
-              <div class="col-md-4">
+
+
+                {{#each movie as |movieTitle|}}
+    <div class="card-body communityBody">
+      {{!-- <h4 style="text-align:left;"> --}}
+      <h4>
+        {{movieTitle.mTitle}}
+        <span style="float:right;">
+           {{movieTitle.mActors}}
+        </span>
+          <span style="float:right;">
+           {{movieTitle.mRelease}}
+        </span>
+        <div class="col-md-4">
                 <img
-                  src=" {{mPoster}}"
+                  src=" {{movieTitle.mPoster}}"
                   class="img-fluid rounded-start"
                   alt="..."
                 />
               </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    {{mTitle}}
-                  </h5>
-                  <p class="card-text">Actors:
-                    {{mRelease}}
-                  </p>
-                  <p class="card-text">Ratings:
-                    {{movie.rating}}
-                  </p>
-                  <p class="card-text">Actors:
-                    {{mActors}}
-                  </p>
-                  
-                 <div class="btn-group jesse" role="group" aria-label="Basic outlined example">
+        
+      </h4>
+      <div class="btn-group jesse" role="group" aria-label="Basic outlined example">
         <button type="button" class="btn btn-outline-primary saveToWatchlist" id="#already-watched">Save To Watchlist</button>
         <button type="button" class="btn btn-outline-primary alreadyWatched" id="#watch-later">Already Watched</button>
       </div>
-                </div>
-              </div>
-            </div> --}}
+    </div>
+  {{/each}}
+
+
             <div>
               <form class="new-review">
                 <div class="form-group">
