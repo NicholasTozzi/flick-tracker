@@ -10,7 +10,26 @@
   <a href="/review">Search Movie</a>
 </div>
 
-
+  <div class="col profileBoxes">
+      <h5 class="card-title sup">&#10026;Reviews&#10026;</h5>
+      {{#if reviews.length}}
+      <div class="new-blog">
+    {{#each reviews as |review|}}
+        <div class="card-body partTwo">
+            <div class="user-clog-content">
+                <h3>{{review.name}}</h3>
+                {{!-- <p>Created by {{username}} on {{format_date date_created}}</p> --}}
+                <p>{{review.content}}</p>
+            </div>
+        </div>
+        {{/each}}
+        </div>
+        {{else}}
+       <div class="card-body partTwo">
+          <p>Nothing To See Yet!</p>
+        </div>
+    {{/if}}
+</div>
 
   
 
@@ -41,7 +60,7 @@
     {{/if}}
   </div> --}}
 
-
+{{!-- 
     <div class="all">
     <div class="col profileBoxes">
       {{#if profiles.length}}
@@ -75,8 +94,8 @@
       </div>
       {{#each profiles as |profile|}}
       <div class="card-body hi">
-        <h4 class="my-0 fw-normal shrek">&#10026;Watch Later&#10026;</h4>
-       <p>{{profile.watchlist}}</p>
+        <h4 class="my-0 fw-normal shrek">&#10026;Most Watched Genres&#10026;</h4>
+        <p>{{profile.watchlist}}</p>
        </div>
       {{/each}}
       {{else}}
@@ -88,7 +107,7 @@
       </div>
       {{/if}}
     </div>
-    </div>
+    </div> --}}
 
   {{!-- <div class="all">
   <div class="col profileBoxes"> --}}
@@ -109,27 +128,7 @@
     </div>
       
       {{/if}} --}}
-        <div class="all">
-  <div class="col profileBoxes">
-      <h5 class="card-title sup">&#10026;Reviews&#10026;</h5>
-      {{#if reviews.length}}
-      <div class="new-blog">
-    {{#each reviews as |review|}}
-        <div class="card-body partTwo">
-            <div class="user-clog-content">
-                <h3>{{review.name}}</h3>
-                {{!-- <p>Created by {{username}} on {{format_date date_created}}</p> --}}
-                <p>{{review.content}}</p>
-            </div>
-        </div>
-        {{/each}}
-        </div>
-        {{else}}
-       <div class="card-body partTwo">
-          <p>Nothing To See Yet!</p>
-        </div>
-    {{/if}}
-</div>
+
 {{!-- 
 <script src="./javascript/watch.js"></script> --}}
 
