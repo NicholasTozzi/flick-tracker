@@ -48,63 +48,103 @@ document
 //          }
 //      };
 
+// https://online-movie-database.p.rapidapi.com/auto-complete?q=${movieTitle}
+
+// const search = async (event) => {
+//   event.preventDefault();
+//   const movieTitle = document.querySelector("#movie-title").value.trim();
+
+//   if (movieTitle) {
+//     const response = await fetch(`/api/review/movie`, {
+//       method: "POST",
+//       body: JSON.stringify({ movieTitle }),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+//     const data = await response.json();
+//     if (response.ok) {
+//       // response.render(response, {movie: things});
+//       // createHTML(data);
+//       console.log(movieTitle); // query selector
+//       console.log(data); //full array
+//       // console.log(data.d[0].l); //individual movie
+//       // console.log(data.d[0].s); //individual movie
+//       // console.log(data.d[0].y); //individual movie
+//       // console.log(data.d[0].i); //individual movie
+
+//       for (let z = 0; z < data.length; z++) {
+//         const mTitle = data[z].l;
+//         const mActors = data[z].s;
+//         const mRelease = data[z].y;
+//         const mPoster = data[z].i.imageUrl;
+
+//         console.log(mTitle); // prints movie name
+//         console.log(mActors); // prints actors name
+//         console.log(mRelease); // prints release year
+//         console.log(mPoster); // prints image link
+     
+//       }
+//     }
+//       //  document.location.replace("/profile");
+//     } else {
+//       alert("Failed to search movie!");
+//     }
+//   };
+
 const search = async (event) => {
   event.preventDefault();
   const movieTitle = document.querySelector("#movie-title").value.trim();
 
   if (movieTitle) {
-    const response = await fetch(`/api/review/movie`, {
-      method: "POST",
-      body: JSON.stringify({ movieTitle }),
+    const response = await fetch(`https://online-movie-database.p.rapidapi.com/auto-complete?q=${movieTitle}`, {
+      method: "GET",
+      params: JSON.stringify({ movieTitle }),
       headers: {
+        'X-RapidAPI-Key': 'a07724306amsh845f95cb4166ea8p1978d1jsn1ef6eee14cbc',
+        'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com',
         "Content-Type": "application/json",
       },
     });
     const data = await response.json();
     if (response.ok) {
+      // response.render(response, {movie: things});
+      // createHTML(data);
       console.log(movieTitle); // query selector
       console.log(data); //full array
-      console.log(data[0]); //individual movie
+      console.log(data.d[0].l); //individual movie
+      console.log(data.d[0].s); //individual movie
+      console.log(data.d[0].y); //individual movie
+      console.log(data.d[0].i); //individual movie
+      console.log(data.d[1].l, data.d[1].s, data.d[1].y, data.d[1].i);
 
-      for (let i = 0; i < data.length; i++) {
-        const mTitle = data[i].l;
-        const mActors = data[i].s;
-        const mRelease = data[i].y;
-        const mPoster = data[i].i.imageUrl;
+      for (let z = 0; z < data.length; z++) {
+        const mTitle = data[z].l;
+        const mActors = data[z].s;
+        const mRelease = data[z].y;
+        const mPoster = data[z].i.imageUrl;
 
         console.log(mTitle); // prints movie name
         console.log(mActors); // prints actors name
         console.log(mRelease); // prints release year
         console.log(mPoster); // prints image link
       }
+    }
       //  document.location.replace("/profile");
     } else {
       alert("Failed to search movie!");
     }
-  }
-};
+  };
 
-// const search = async event => {
-//     event.preventDefault();
 
-//     const options = {
-//         method: 'GET',
-//         headers: {
-//             "X-RapidAPI-Key": "d65415b0b4msha2b92f5899f8885p1dbaa1jsne278af2bc260",
-//             "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
-//         }
-//     };
-//     let movieTitle = document.querySelector("#movie-title").value.trim();
-//     fetch(`https://imdb8.p.rapidapi.com/auto-complete?q=${movieTitle}`)
-//         .request(options)
-//         .then(function (response) {
-//             console.log(response.data);
-//         })
-//         .catch(function (error) {
-//         console.error(error);
-//         });
-//         };
+
+// function createHTML(movieData) {
+//   var rawTemplate = document.getElementById("movieTemplate").innerHTML;
+//   var compiledTemplate = Handlebars.compile(rawTemplate);
+//   var ourGeneratedHTML = compiledTemplate(movieData);
+//   var movieContainer = document.getElementById("movie-container");
+//   movieContainer.innerHTML = ourGeneratedHTML;
+//   }
+
 
 document.querySelector("#new-movie").addEventListener("click", search);
-// document
-// .querySelector("search-movie")// .addEventListener("submit", postMovie);
