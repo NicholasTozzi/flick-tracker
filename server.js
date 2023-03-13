@@ -22,7 +22,7 @@ const app = express();
 const PORT = process.env.PORT || 3006;
 
 const hbs = exphbs.create({
-  helpers: helpers
+  helpers: helpers,
 });
 
 //Creating a cookie session
@@ -47,7 +47,7 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
+    db: sequelize,
   }),
 };
 
@@ -67,6 +67,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 //starting sequelize server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log("http://localhost:3006"));
 });
