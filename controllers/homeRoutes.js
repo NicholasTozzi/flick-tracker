@@ -17,16 +17,18 @@ router.get("/", async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get("/community", async (req, res) => {
   try {
-    const reviewData = await Review.findAll({ // getting all of the blogs and users(ref model)
+    const reviewData = await Review.findAll(req.params.id, {
+      // getting all of the blogs and users(ref model)
       include: [
         {
-          model: User
+          model: User,
         },
       ],
     });
 
     const allReviews = reviewData.map((y) => y.get({ plain: true }));
-    res.render('community', { // telling all off the cur blogs(if any) to render/show up on the homepage
+    res.render("community", {
+      // telling all off the cur blogs(if any) to render/show up on the homepage
       allReviews,
       logged_in: req.session.logged_in,
     });
@@ -36,12 +38,9 @@ router.get("/community", async (req, res) => {
   }
 });
 
-
-
-
-router.get('/profile', withAuth, async (req, res) => {
+router.get("/profile", withAuth, async (req, res) => {
   try {
-       const profileData = await Profile.findAll(req.params.id, {
+    const profileData = await Profile.findAll(req.params.id, {
       include: [
         {
           model: User,
@@ -50,34 +49,36 @@ router.get('/profile', withAuth, async (req, res) => {
       ],
     });
 
-    const userData = await User.findByPk(req.session.user_id, { // using session id, to get the currently logged in user, to display THEIR blogs.
-      attributes: { exclude: ['password'] }, // excluding the password so nobody can see it.
+    const userData = await User.findByPk(req.session.user_id, {
+      // using session id, to get the currently logged in user, to display THEIR blogs.
+      attributes: { exclude: ["password"] }, // excluding the password so nobody can see it.
       include: [{ model: Review }],
     });
 
     const user = userData.get({ plain: true });
 
     const profile = profileData.map((y) => y.get({ plain: true }));
-    res.render('profile', { // telling all off the cur blogs(if any) to render/show up on the homepage
+    res.render("profile", {
+      // telling all off the cur blogs(if any) to render/show up on the homepage
       profile,
       ...user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
-    console.log(err)
+    console.log(err);
   }
 });
 
-router.get('/review', async (req, res) => {
+router.get("/review", async (req, res) => {
   try {
-  res.render("review", {
-    logged_in: req.session.logged_in,
-  });
-} catch (err) {
-  console.log(err)
-  res.status(500).json(err);
-}
+    res.render("review", {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get("/login", (req, res) => {

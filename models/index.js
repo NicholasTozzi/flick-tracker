@@ -13,18 +13,16 @@ Profile.hasMany(Review, {
   onDelete: "CASCADE",
 });
 
-//child associations
-Profile.belongsTo(User, {
-  foreignKey: "user_id",
-});
-Review.belongsTo(User, {
-  foreignKey: "user_id",
-});
-
 User.hasMany(Review, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
+
+//child associations
+Profile.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
 Review.belongsTo(User, {
   foreignKey: "user_id",
 });
