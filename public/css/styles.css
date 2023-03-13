@@ -339,8 +339,7 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     
-    border: solid;
-    border-color: #fffbf2;
+    border: 1px solid #C10206;
   }
 
   .community {
@@ -373,8 +372,21 @@ img {
   color: #fff;
 }
 
+.label-color-m {
+  color: #fff;
+  margin-left: 2px;
+}
+
 .review-box-m {
  margin-top: 10%;
+}
+
+.movie-s-div {
+  border: 2px solid #C10206;
+}
+
+.movie-search {
+  background-color: #010a10;
 }
 
  .reviewpg {
