@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get("/community", async (req, res) => {
   try {
-    const reviewData = await Review.findAll(req.params.id, {
+    const reviewData = await Review.findAll({
       // getting all of the blogs and users(ref model)
       include: [
         {
