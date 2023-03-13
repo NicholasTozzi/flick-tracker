@@ -48,10 +48,6 @@ User.init(
     modelName: "user",
   }
 );
-// checkPassword(loginPw) {
-//   console.log(this)
-//   return bcrypt.compareSync(loginPw, this.password); //changed to compare
-// }
 
 
 User.prototype.checkPassword = function(pw) {
