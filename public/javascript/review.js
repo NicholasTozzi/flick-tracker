@@ -26,71 +26,6 @@ document
   .querySelector(".new-review")
   .addEventListener("submit", newReviewSubmit);
 
-//   const postMovie = async event => {
-//      event.preventDefault();
-
-//      const movieTitle = document.querySelector("#movie-title").value.trim();
-
-//      if (movieTitle) {
-//          const response = await fetch(`/api/review/search`, {
-//              method: "POST",
-//              body: JSON.stringify({movieTitle}),
-//              headers: {
-//                  "Content-Type": "application/json"
-//              }
-//         });
-
-//          if (response.ok) {
-//              document.location.replace("/profile");
-//            } else {
-//              alert("Failed to search movie!");
-//            }
-//          }
-//      };
-
-// https://online-movie-database.p.rapidapi.com/auto-complete?q=${movieTitle}
-
-// const search = async (event) => {
-//   event.preventDefault();
-//   const movieTitle = document.querySelector("#movie-title").value.trim();
-
-//   if (movieTitle) {
-//     const response = await fetch(`/api/review/movie`, {
-//       method: "POST",
-//       body: JSON.stringify({ movieTitle }),
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//     });
-//     const data = await response.json();
-//     if (response.ok) {
-//       // response.render(response, {movie: things});
-//       // createHTML(data);
-//       console.log(movieTitle); // query selector
-//       console.log(data); //full array
-//       // console.log(data.d[0].l); //individual movie
-//       // console.log(data.d[0].s); //individual movie
-//       // console.log(data.d[0].y); //individual movie
-//       // console.log(data.d[0].i); //individual movie
-
-//       for (let z = 0; z < data.length; z++) {
-//         const mTitle = data[z].l;
-//         const mActors = data[z].s;
-//         const mRelease = data[z].y;
-//         const mPoster = data[z].i.imageUrl;
-
-//         console.log(mTitle); // prints movie name
-//         console.log(mActors); // prints actors name
-//         console.log(mRelease); // prints release year
-//         console.log(mPoster); // prints image link
-     
-//       }
-//     }
-//       //  document.location.replace("/profile");
-//     } else {
-//       alert("Failed to search movie!");
-//     }
-//   };
 
 const search = async (event) => {
   event.preventDefault();
@@ -110,27 +45,35 @@ const search = async (event) => {
     if (response.ok) {
       // response.render(response, {movie: things});
       // createHTML(data);
-      console.log(movieTitle); // query selector
-      console.log(data); //full array
-      console.log(data.d); //8 drop down objects inside the array
-      console.log(data.d.length);
-      console.log(data.d[0].l); //individual movie
-      console.log(data.d[0].s); //individual movie
-      console.log(data.d[0].y); //individual movie
-      console.log(data.d[0].i); //individual movie
-      console.log(data.d[1].l, data.d[1].s, data.d[1].y, data.d[1].i);
-
+      // console.log(movieTitle); // query selector
+      // console.log(data); //full array
+      // console.log(data.d); //8 drop down objects inside the array
+      // console.log(data.d.length);
+      // console.log(data.d[0].l); //individual movie
+      // console.log(data.d[0].s); //individual movie
+      // console.log(data.d[0].y); //individual movie
+      // console.log(data.d[0].i); //individual movie
+      // console.log(data.d[1].l, data.d[1].s, data.d[1].y, data.d[1].i);
+      console.log(data)
+      const movieContainer = document.getElementById("movie-container")
+      movieContainer.innerHTML = ""
       for (let i = 0; i < data.d.length; i++) { // get this to actually work.
         const mTitle = data.d[i].l;
         const mActors = data.d[i].s;
         const mRelease = data.d[i].y;
-        const mPoster = data.d[i].i.imageUrl;
+        const mPoster = data.d[i]?.i?.imageUrl ? data.d[i].i.imageUrl : ""
 
-        console.log(i);
-        console.log(mTitle); // prints movie name
-        console.log(mActors); // prints actors name
-        console.log(mRelease); // prints release year
-        console.log(mPoster); // prints image link
+        const movieCard = `
+  <div class="card" style="width: 18rem;">
+    ${mPoster? `  <img src="${mPoster}" class="card-img-top" alt="Poster of Movie">`: "<p>No Poster Available</p>"}
+      <div class="card-body">
+      <p class="card-text">${mTitle}</p>
+      <p class="card-text">${mRelease}</p>
+      <p class="card-text">${mActors}</p>
+    </div>
+  </div>
+        `
+        movieContainer.innerHTML += movieCard
       }
     }
       //  document.location.replace("/profile");
