@@ -7,83 +7,48 @@
             <div id="new-movie">
               <div class="form-group">
                 <label for="movie-title"></label>
-                <input id="movie-title" name="movie-title" class="form-control"/>
+                <input id="movie-title" name="movie-title" class="form-control" />
               </div>
               <div class="form-group">
                 <button type="click">Search Movie</button>
               </div>
-          </div>
-        </div> --}}
+            </div>
+          </div> --}}
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div> --}}
-      <div class="card mb-3 movie-s-div">
-            <div id="new-movie">
-              <div class="movie-search">
-              <div class="form-group">
-                <label for="movie-title"></label>
-                <input id="movie-title" name="movie-title" class="form-control"/>
-              </div>
-              <div class="form-group">
-                <button type="click" class="button-c-f">Search Movie</button>
-              </div>
-              </div>
-      
-          <div id="movie-container" class="all">
-      <div class="movie" id="movieTemplate">
-        
-        {{#each data.d}}
-        <div class="each-movie">
-          <h4 style="text-align:left;" class="label-color-m">
-            Title: {{l}}
-          </h4>
-        </div>
-          <div class="label-color-m">
-            {{!-- Actors: {{data.d.s}} --}}
-          </div>
-          <span class="label-color-m">
-           {{!-- Release Year: {{data.d.y}} --}}
-          </span>
-          <div class="col-md-4">
-              <img src="{{i}}" class="img-fluid rounded-start" alt="..."/>
-            </div>
-            {{/each}}
-          </div>
-          {{!-- {{else}} 
-          <div>
-          <p>Nothing To See Yet!</p>
-        </div>
-         {{/if}}  --}}
+<div class="card mb-3 movie-s-div">
+  <div id="new-movie">
+    <div class="movie-search">
+      <div class="form-group">
+        <label for="movie-title"></label>
+        <input id="movie-title" name="movie-title" class="form-control" />
       </div>
+      <div class="form-group">
+        <button type="click" class="button-c-f">Search Movie</button>
       </div>
-      </div>
-              <div class="reviewpg review-box-m">
-              <div class="movie-box">
-              <form class="new-review">
-                <div class="form-group">
-                  <label for="review-name" class="label-color">Movie Name:</label>
-                  <input
-                    class="form-input-d"
-                    type="text"
-                    id="review-name"
-                    name="review-name"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="review-content" class="label-color">Review Content:</label>
-                  <textarea
-                    class="form-input-d"
-                    id="review-content"
-                    name="review-content"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <button type="submit">Create Review</button>
-                </div>
-              </form>
-              </div>
-            </div>
-<script src="./javascript/review.js"></script>
+    </div>
 
+    <div id="movie-container" class="all">
+    </div>
+  </div>
+  <div class="reviewpg review-box-m">
+    <div class="movie-box">
+      <form class="new-review">
+        <div class="form-group">
+          <label for="review-name" class="label-color">Movie Name:</label>
+          <input class="form-input-d" type="text" id="review-name" name="review-name" />
+        </div>
+        <div class="form-group">
+          <label for="review-content" class="label-color">Review Content:</label>
+          <textarea class="form-input-d" id="review-content" name="review-content"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Create Review</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="./javascript/review.js"></script>
