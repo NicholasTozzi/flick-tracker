@@ -59,7 +59,7 @@ You can use npm run seed, or npm start
 
 # Usage
 
-We can add screenshots and walk the user through how to use our application here
+https://flick-tracker.herokuapp.com/
 
 ## License
 
