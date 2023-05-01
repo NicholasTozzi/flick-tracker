@@ -1,3 +1,6 @@
+# Flick Tracker
+
+#### Flick Tracker is looking to create a new way to engage with fellow movie lovers, through a user database system. Each user will have a profile where you can view their followed users, following, watched movies, etc. We want to show you analytics based off of the information you provide, to help refine and diversify your taste. We will allow people to post reviews on movies they have seen, in order for their followers to potentially add new items into their watchlist that wouldn't be curated from their own analytics.
 
 #### You may be asking yourself, "Why use flick tracker? Don't services such as Netflix, Hulu, Disney+, Apple TV, HBO max, Amazon Video, Youtube TV, Paramount +, etc already track what I'm watching and curate reccomendations?" They technically do, but only upon a narrow scope of the individual platform. Due to this narrow scope, the users reccomendations aren't taylored to them, just the scope of the service. Our goal at Flick Tracker is to broaden this scope through all of the features we provide for the user through both our user database, and social systems.
 
